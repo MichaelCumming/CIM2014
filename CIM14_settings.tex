@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%  DO NOT EDIT !
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+\usepackage{graphicx}             
+\usepackage{tabularx}             
+\usepackage{multirow}             
+\usepackage{url}                 
+\usepackage[ansinew]{inputenc}
+\usepackage[small,bf]{caption}   
+\usepackage{parskip}
+\usepackage{amsmath}             
+\usepackage{xcolor}
+\usepackage{lipsum} 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{mathptmx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% spacing and indents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parskip}{2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[left=1.7cm,right=1.7cm,top=2.5cm,bottom=2.5cm]{geometry}
+\setlength{\columnsep}{0.6cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% make a header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy} 
+\fancyhf{}  
+\fancyhead[L]{\small\itshape Proceedings of the $9^{th}$ Conference on Interdisciplinary Musicology -- CIM14.
+Berlin, Germany 2014}  
+\fancyhead[C]{}  
+\fancyhead[R]{}  
+\renewcommand{\headrulewidth}{0.0pt}  
+\fancyfoot[C]{}  
+\renewcommand{\footrulewidth}{0.0pt}  
+
+\pagestyle{fancy}
+
+\makeatletter
+\let\ps@plain\ps@fancy 
+\makeatother
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% adjust titles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+  
+\titleformat{\section}{\centering\normalfont\bfseries\sc\fontsize{10}{10}\selectfont}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\itshape\fontsize{10}{10}\selectfont}{\thesubsection.}{0.5em}{}
+  
+\titlespacing{\section}{0pt}{9pt}{2pt}
+\titlespacing{\subsection}{0pt}{5pt}{0pt}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Strongly discourage hyphenation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hyphenpenalty=5000
+\tolerance=1000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+
+\hypersetup{
+     unicode=false,           
+    pdftoolbar=true,        
+    pdfmenubar=true,        
+    pdffitwindow=false,      
+    pdfstartview={FitH},     
+    pdftitle={},     
+    pdfauthor={},      
+    pdfsubject={},   
+    pdfcreator={},   
+    pdfproducer={},  
+    pdfkeywords={keyword1} {key2} {key3}, 
+    pdfnewwindow=true,      
+    colorlinks=true,        
+    linkcolor=darkgray,          
+    citecolor=darkgray,         
+    filecolor=darkgray,      
+    urlcolor=darkgray            
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% abstract settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\newcommand{\CIMabstract}
+[1]
+{
+\paragraph*{\itshape Abstract:} 
+{ \bfseries
+\fontsize{8}{9}\selectfont
+#1
+%
+}
+\vspace{0.3cm}}
+
+ 

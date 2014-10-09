@@ -36,7 +36,6 @@ $^1$ $^2$ $^3$ OCAD University Toronto, ON M5T 1W1 Canada
 \footnotesize 
 Correspondence should be addressed to: %
 %
-% MAKE SURE TO CHANGE BOTH ENTRIES !!!!
 %
 \href
 {mailto:atindale@faculty.ocadu.ca}{atindale@faculty.ocadu.ca},
@@ -62,12 +61,19 @@ Wrist-wearable vibrotactile arrays can serve many functions: typically they are 
 
 \section{Introduction}
 This work is related to the design of a wrist-wearable vibrotactile device that combines several functions, including the control of gameplay from a smartphone or tablet, display of user?s heart rate visually and vibrationally and display of interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}. For a device in which vibrotactile patterns play such a major aspect, how to author patterns in a shareable and standardized way becomes an important consideration. 
+
+A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is Arduino code written in C. The design of vibe patterns for such devices is a specialized, yet multi-disciplinary area that straddles concerns for appropriate design of human computer interfaces and for potentially artistic patterns that look and feel attractive on the wrist. Yet the design of vibrational patterns is not a new issue. Music production, especially that which has a strong rhythmic component, faces a similar issue. Nor does design of rhythmic patterns necessarily involve notational systems. Composers and musicians can easily create musical patterns using digital audio workstation software without first composing these patterns in a system of notation. 
+
+The design of patterns on vibrotactile devices depends of course on their intended functionality. If they are used primarily as entertainment or adornment devices then this would encourage certain forms of rhythmic composition. If they have other purposes such as way-finding through a space, or notification of game status then this  would require quite different pattern-making requirements. 
+
+Two issues are: how to compose rhythmic patterns that are suitable for vibrotactile bands, and how to translate these patterns into a form that the band understands using Midi, or some other protocol.
+
 \section{Related Work}
 
 \subsection{Haptic feedback and communication}
 Haptic communication through force feedback is a common technique used in gaming. It purpose is to introduce the sense of touch to interactions such as movement through space, collision with, and proximity to, objects, and notification of awarding of game points and of proximity to dangerous situations. Touch can add sensual aspects and realism to computer interactions and may be useful in reducing sensory overloads from other perceptual modalities such those used in graphical interfaces \cite{oakley2000putting}, or with devices too small to have large visual displays.
 
-Oakley provides a useful taxonomy of haptic-related terms, such as proprioceptive, kinesthetic and tactile. Haptic is a general term relating to the sense of touch, while tactile is more specific and relates to the sensation of pressure rather than that of temperature or pain \cite{oakley2000putting}. The largest organ of the human body is the skin and has great potential for the transmittal of information and sensation \cite{lindeman2006wearable}. 
+Oakley provides a useful taxonomy of haptic-related terms, such as proprioceptive, kinesthetic and tactile. Haptic is a general term relating to the sense of touch, while tactile is more specific and relates to the sensation of pressure rather than that of temperature or pain \cite{oakley2000putting}. The largest organ of the human body is the skin and has great potential for the transmittal of information and sensation \cite{lindeman2006wearable} \cite{brewster2004tactons}. 
 
 Haptic feedback has a long history in the design of computer mice and of other hand controllers \cite{yang2005novel}. Touch is of course useful in generating intimacy in normal social situations \cite{bronner1982haptic}. It can also be used to coordinate action in online or gaming situations \cite{ho1998experiment}. The new Apple Watch also enables wearers to communicate their heartbeat to others wirelessly \cite{johnson2014literature}. 
 
@@ -79,11 +85,17 @@ The purposes of such devices are varied and include emulation of attention-getti
 Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}.
 
 \subsection{Pattern authoring for vibrotactile devices}
+It is clear that appropriate patterns for vibrotactile devices depends fundamentally on what you want such devices to do.
+
+
 
 \subsection{Music notation systems and haptics}
 \subsection{Technologies for producing music using notational systems}
 
 \section{Results}
+
+
+One way of creating midi control patterns is to compose music in such a way that midi data describing the music is produced as a side-effect. This, of course, is standard procedure in modern music production. One way of producing midi is by using the text-based music engraving and compositional tool Lilypond.
 \section{Discussion}
 \section{Future Work}
 \section{Conclusion}

@@ -64,9 +64,23 @@ This work is related to the design of a wrist-wearable vibrotactile device that 
 
 A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is Arduino code written in C. The design of vibe patterns for such devices is a specialized, yet multi-disciplinary area that straddles concerns for appropriate design of human computer interfaces and for potentially artistic patterns that look and feel attractive on the wrist. Yet the design of vibrational patterns is not a new issue. Music production, especially that which has a strong rhythmic component, faces a similar issue. Nor does design of rhythmic patterns necessarily involve notational systems. Composers and musicians can easily create musical patterns using digital audio workstation software without first composing these patterns in a system of notation. 
 
-The design of patterns on vibrotactile devices depends of course on their intended functionality. If they are used primarily as entertainment or adornment devices then this would encourage certain forms of rhythmic composition. If they have other purposes such as way-finding through a space, or notification of game status then this  would require quite different pattern-making requirements. 
+The design of patterns on vibrotactile devices depends on their intended functionality. If they are used primarily as entertainment or adornment devices then this would encourage certain forms of rhythmic composition. If they have other purposes such as way-finding through a space, or notification of game status then they would require quite different pattern-making requirements. 
 
-Two issues are: how to compose rhythmic patterns that are suitable for vibrotactile bands, and how to translate these patterns into a form that the band understands using Midi, or some other protocol.
+There are requirements for vibe design on bracelets that seem to transcend the actual use cases you might have for these devices. If one assumes that these devices have multiple tactors (vibe motors), these include the ability to activate a tactor individually (a form of monophony) or activate several tactor simultaneously. Each tactor could then play an individual ?part? in an assemble of parts (polyphony). Other considerations are how to design vibrations of specified durations and intensities, similar to the note lengths and dynamics of musical composition, and how to activate a rhythmic pattern that plays over time. 
+
+Several issues arise: which rhythmic patterns are suitable for vibrotactile devices, the best way of composing these patterns in some standardized way, and how to translate these patterns into a form that the hardware device understands using Midi, or some other protocol.
+
+Which rhythmic patterns are suitable for vibrotactile devices? It depends on:
+\begin{itemize}
+
+\item Where the device is placed on the body: receptor density varies greatly between various part of the body. 
+
+\item The function of the device: if vibrations are to lend directionality in a way-finding app, then ones that pulse in a definite direction are appropriate. If creative expression is the goal then any kind of pattern might be appropriate.
+
+\item How many tactors the device has: devices with single tactors can play only simple monophonic patterns. Device with several tactors can play significantly more complex patterns. This is similar to single voice parts compared to assemble of four voice parts or more. The complexity increases enormously going from one part to four, as the history of western polyphony attests. 
+
+\item The kind of information [if any] is being transmitted: encoding of symbolic information can be problematic in tactors, since people are not generally accustomed to decoding symbolic vibrotactile messages. 
+\end{itemize}
 
 \section{Related Work}
 
@@ -85,16 +99,13 @@ The purposes of such devices are varied and include emulation of attention-getti
 Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}.
 
 \subsection{Pattern authoring for vibrotactile devices}
-It is clear that appropriate patterns for vibrotactile devices depends fundamentally on what you want such devices to do.
-
-
+It is clear that appropriate patterns for vibrotactile devices depends on what you want such devices to do. It also depends of course on what the device is capable of doing. 
 
 \subsection{Music notation systems and haptics}
 \subsection{Technologies for producing music using notational systems}
 
 \section{Results}
-
-
+\subsection{Use Cases for Vibrotactile Devices}
 One way of creating midi control patterns is to compose music in such a way that midi data describing the music is produced as a side-effect. This, of course, is standard procedure in modern music production. One way of producing midi is by using the text-based music engraving and compositional tool Lilypond.
 \section{Discussion}
 \section{Future Work}

@@ -7,11 +7,11 @@
 *.swo
 *.swp
 *.vi
-*~
 *.aux
 *.log
 *.out
 *.pdf
 *.bbl
 *.blg
-*.synctex.gz
+*.gz
+*.gz(busy)

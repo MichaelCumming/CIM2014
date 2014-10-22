@@ -60,24 +60,109 @@ Wrist-wearable vibrotactile arrays can serve many functions: typically they are 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-This work is related to the design of a wrist-wearable vibrotactile device that combines several functions, including the control of gameplay from a smartphone or tablet, display of user?s heart rate visually and vibrationally and display of interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}. For a device in which vibrotactile patterns play such a major aspect, how to author patterns in a shareable and standardized way becomes an important consideration.\\
 
-A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is Arduino code written in C. The design of vibe patterns for such devices is a specialized, yet multi-disciplinary area that straddles concerns for appropriate design of human computer interfaces and for potentially artistic patterns that look and feel attractive on the wrist. Yet the design of vibrational patterns is not a new issue. Music production, especially that which has a strong rhythmic component, faces a similar issue. Nor does design of rhythmic patterns necessarily involve notational systems. Composers and musicians can easily create musical patterns using digital audio workstation software without first composing these patterns within a system of notation.\\
+We are developing a midi-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors, buttons that activate when vibe motors are touched. It is controlled by a Bluetooth-enabled (low energy) LightBlue Bean microprocessor with a 3-axis accelerometer. This device combines several functions, including the control of gameplay from a smartphone or tablet, visual display of user's heart rate and interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}.\\
 
-The design of patterns on vibrotactile devices depends on their intended functionality. If they are used primarily as entertainment or adornment devices then this would encourage certain forms of rhythmic composition. If they have other purposes such as way-finding through a space, or notification of game status then they would require quite different pattern-making requirements.\\ 
+The game that is played on this device is a collections and discovery game for children aged 8-14 called \textit{Time Tremors} in which children collect crystals in order to unlock treasures that they then view on an accompanying smartphone app. Crystals are earned by the player through simple puzzle-solving, artifact discovery and physical activities. The end result is a sensory-intensive, transmedia game intended to encourage physical fitness and cultural exploration in children. On the device vibrotactile patterns play a major part and how to author patterns in a shareable and standardized way becomes an important consideration.\\
 
-There are requirements for vibe design on bracelets that seem to transcend the actual use cases you might have for these devices. If one assumes that these devices have multiple tactors (vibe motors), these include the ability to activate a tactor individually (a form of monophony) or activate several tactor simultaneously. Each tactor could then play an individual ?part? in an assemble of parts (polyphony). Other considerations are how to design vibrations of specified durations and intensities, similar to the note lengths and dynamics of musical composition, and how to activate a rhythmic pattern that plays over time.\\
+A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is low-level code written in the C or Wiring languages. The design of vibe patterns for such devices is a specialized, yet multi-disciplinary area that straddles concerns for appropriate design of human computer interfaces suitable for wearables, and for potentially artistic patterns that look and feel attractive on the wrist.\\
 
-Several issues arise: which rhythmic patterns are suitable for vibrotactile devices, the best way of composing these patterns in some standardized way, and how to translate these patterns into a form that the hardware device understands using Midi, or some other protocol.\\
+Basic use cases for the wrist-wearable device include:
+\begin{enumerate}
+  \item Interpret wrist gestures and recognize overall physical activity of the wearer (using the \textit{Bean's} accelerometer),
+  \item notify the wearer when crystals and treasures are earned,
+  \item offer vibrotactile clues about where crystals and treasures can be found, and
+  \item provide aesthetically attractive vibe and light displays corresponding to narrative points in a story.\\
+\end{enumerate}
 
-Which rhythmic patterns are suitable for vibrotactile devices? It depends on:
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{graphics/bracelet-01.png}
+    \end{center}
+    \caption{Bracelet design [PRELIM].\label{fig:fig1}}
+\end{figure}
+
+It is the 3rd and 4th of these use cases that we consider for their potential musicality and the applicability of musical-inspired pattern design. We will do this by starting from basics and showing how we represent patterns, step by step.\\ 
+
+\subsection{Vibrotactile clues}
+They are intended to provide the following messages to the game-player:
+such concepts as 'Go this way / don't go that way,'
+'You're getting warmer / you're getting colder,' and 
+'You're performing the correct movement / you're performing the wrong movement.'
+
+The first two of these are spatial in nature and are also metaphorical, in that they refer to navigating through some kind of virtual space. The last one is kinesthetic in that it refers to moving your limbs through space in some preferred way.\\
+
+Music does not lend itself, on first examination, to these sorts of concepts or metaphors. It is unclear at first what music that could be interpreted as 'go this way' might look like. 
+
+\subsection{Basic conventions}
+Our notational approach for our wrist-wearable device is to follow standard music notation (SMN) conventions and to see where these conventions lead us:
 
 \begin{itemize}
-\item Where the device is placed on the body: receptor density varies greatly between various part of the body. 
-\item The function of the device: if vibrations are to lend directionality in a way-finding app, then ones that pulse in a definite direction are appropriate. If creative expression is the goal then any kind of pattern might be appropriate.
-\item How many tactors the device has: devices with single tactors can play only simple monophonic patterns. Device with several tactors can play significantly more complex patterns. This is similar to single voice parts compared to assemble of four voice parts or more. The complexity increases enormously going from one part to four, as the history of western polyphony attests. 
-\item The kind of information [if any] is being transmitted: encoding of symbolic information can be problematic in tactors, since people are not generally accustomed to decoding symbolic vibrotactile messages. 
+\item Represent time horizontally form left to right: events to the right are later.
+\item A note represents an activation of a component. A component can be of several types (vibe motor, LED, etc.). Place notes on normal, five line staves.
+\item Represent note durations by note type (for example, quarter, half and whole notes), dots and by ties between notes of the same pitch.
+\item If notes are pitched, indicate their pitch through their vertical placement on a staff. If notes are unpitched, represent different components (e.g. different types of vibe motors or LEDs) using various note heads or annotations.
+\item Different \textit{parts} are on separate staves. One tactor type playing the same notes at the same time represents playing in \textit{unison}. For example, 48 tactors playing in unison can be represented as one part; there is no need to repeat the same information 48 times. 
+\item Simultaneous notes, or \textit{chords} are stacked vertically, as in SMN.
 \end{itemize}
+
+%example here
+As a second step we need to translate the nomenclature from our domain of vibrating wrist wearables to that of standard music. The flowing table indicates the mapping we have applied from our domain to that of music notation:
+
+\begin{table}[htbp]
+\caption{Vibrotactile vs Music notation terms}
+\small
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+Vibrotactile term & SMN term \\ 
+\midrule
+Activation of one component & Note \\
+Activation duration & Note duration \\
+One type of component & Instrument \\
+Series of activations for one instrument & Part \\
+Frequency of an activation & Pitch \\
+Simultaneous activations w/ multiple pitches & Chord \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{graphics/scaleArduino-01.pdf}
+    \end{center}
+    \caption{Simple scale for a pitched Arduino component.\label{fig:fig2}}
+\end{figure}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{graphics/drums1-simple.pdf}
+    \end{center}
+    \caption{Simple rhythm for two unpitched Arduino components.\label{fig:fig3}}
+\end{figure}
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{graphics/drums1-multistaff.pdf}
+    \end{center}
+    \caption{Complex rhythm for three Arduino components.\label{fig:fig4}}
+\end{figure}
+
+
+Examples to show (in SMN):
+simple: one part, no pitch, rhythm
+more complex: two parts, pitched
+complex: many parts, SATB style, melody line, rhythms
+
+\subsection{Pitch}
+Vertical placement for normal, pitched notes in SMN indicates their pitch. The pitch of a note is one of its primary psychoacoustic attributes, along with its duration, loudness and timbre. Unpitched notes are those for which the frequency is indeterminate, too complex or unrelated to the pitch contours of melodic or harmonic parts. The perception of pitch in vibrotactile devices differs from that of normal acoustic instruments. The number of frequency differences is much reduced and depends on amplitude. There may be as few as five frequency distinctions possible with cutaneous perception, or as many as ten \cite{van2003distilling}. The skin's maximal frequency response occurs around 250 Hz \cite{gunther2003cutaneous}. So it is clear that the chromatic range of pitches and frequencies over many octaves as normally represented using music notation is not suitable for cutaneous perception, but that some variation in pitch is possible. 
+
+\subsection{Intensity}
+As with aural music, suitable intensities for vibrotactile devices range from those that are barely perceptual to those that become uncomfortable. Considerations of the amplitude envelope (amplitude, delay, sustain, release, or ADSR) and with amplitude modulations such as tremolo or pitch modulations like vibrato \cite{gunther2003cutaneous}. 
+
+\subsection{Duration}
+If vibrotactile notes are of short duration they are perceived as sharp taps or jobs in the skin \cite{gunther2003cutaneous}. 
+
 
 \section{Related Work}
 
@@ -95,83 +180,30 @@ The purposes of such devices are varied and include emulation of attention-getti
 
 Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}.
 
+
+Vibrational patterns suitable for a wrist device are much less complex than those designed for auditory perception due to the constrained perceptual channel of the cutaneous and kinaesthetic possibilities of the wrist compared to that of our ears.\\  
+
 \subsection{Pattern authoring for vibrotactile devices}
 It is clear that appropriate patterns for vibrotactile devices depends on what you want such devices to do. It also depends of course on what the device is capable of doing. 
 
 \section{Designing patterns for midi-driven vibe devices}
 
 \subsection{Introduction}
-We are developing a midi-driven bracelet that a wrist-wearable device, which integrates with gameplay app on an accompanying smartphone. The wrist device includes LED lights, several vibe motors, buttons that activate when vibe motors are touched, and a Bluetooth-enabled (low energy) microprocessor with a 3-axis accelerometer called the LightBlue Bean.\\
+One way of creating midi control patterns is to compose music in such a way that midi data describing the music is produced as a side-effect.
 
-The game that is played on these devices is a collections and discovery game for children aged 8-14 called \textit{Time Tremors,} in which children collect crystals in order to unlock treasures that they then can display on an accompanying smartphone screen. The way that crystals are earned is through simple puzzle-solving, artifact discovery and physical activities. The end result is a sensory-intensive game intended to encourage physical activity in children.\\
-
-One way of creating midi control patterns is to compose music in such a way that midi data describing the music is produced as a side-effect. This, of course, is standard procedure in modern music production. One way of producing midi is by using the text-based music engraving and compositional tool Lilypond.\\
-
-Basic use cases for our device include:
-\begin{enumerate}
-  \item Interpret wrist gestures and recognize overall physical activity of the wearer (using the \textit{Bean's} accelerometer),
-  \item notify the wearer when crystals and treasures are earned,
-  \item offer vibrotactile clues about where crystals and treasures can be found, and
-  \item provide aesthetically attractive vibe and light displays corresponding to narrative points in a story.\\
-\end{enumerate}
-
-It is the last two use cases that we consider for their potential musicality and the applicability of musical-inspired pattern design.
+This, of course, is standard procedure in modern music production. One way of producing midi is by using the text-based music engraving and compositional tool Lilypond.\\
 
 Vibrotactile clues tend to be rhythmic in nature. Like any other rhythm, these can, in theory, be represented in musical notation. Pitch differentials are also possible with tactors, as their frequency can be modelled using standard pulse-width modulation (PWM) techniques.\\
 
 Therefore, the basic components of music are present even with a wrist-wearable vibrotactile device that does not, at first, seem to have a musical aspect: \textit{notes} with durations, pitched notes played on various discrete \textit{instruments} (vibe motors and LED lights), various \textit{parts,} or \textit{voices,} played in polyphonic \textit{compositions} and the dynamics of various parts playing together. As shown below the translation of these concepts into standard musical notation is fairly straightforward.\\
 
-Our notational approach for our wrist-wearable device is to follow standard musical notation (SMN) conventions:
-
-\begin{itemize}
-\item Represent time horizontally: events to the right are later.
-\item Use normal SMN with 5 lines per staff.
-\item A note represents an activation of a component. A component can be of several types (vibe motor, LED, etc.).
-\item Represent note durations by note type (for example, quarter, half and whole notes), and by ties between notes of the same pitch.
-\item Specify overall tempo by the SMN technique of beats per minute (BPM) for a specific note type (e.g. quarter notes at 120 BPM).
-\item If notes are pitched, indicate their pitch through their vertical placement.
-\item If notes are unpitched, represent different components (e.g. different types of vibe motors or LEDs) using various note heads or annotations.
-\item Different \textit{parts} are on separate staves.
-\item One tactor type playing the same notes at the same time represents playing in \textit{unison}. For example, 48 tactors playing in unison can be represented as one part; there is no need to repeat the same information 48 times. 
-\item Simultaneous notes, \textit{chords} are stacked vertically, as in SMN.
-\end{itemize}
-
-The flowing table gives an idea of the mapping we have applied from our domain to that of SMN:
-
-\begin{table}[h]
-\centering
-\begin{tabular}{@{}ll@{}}
-\toprule
-Vibrotactile term & SMN term \\ \midrule
-Activation of one component & Note \\
-Activation duration & Note duration \\
-One type of component & Instrument \\
-Series of activations for one instrument & Part \\
-Visual display of activations & Staff \\
-Frequency of an activation & Pitch \\
-Simultan. activations w/ multiple pitches & Chord \\ \bottomrule
-
-\end{tabular}
-\end{table}
-
 Requirements for vibe design on bracelets includes the ability to provide a means of designing tactor activation patterns in a standardized way, activate a tactor (vibe motor) individually (monophony) or simultaneously with various ?parts? (polyphony), have vibrations of specified durations, intensities and possibly pitches, and to activate rhythmic patterns over time.\\
 
-Examples to show:
-simple: one part, no pitch, rhythm
-more complex: two parts, pitched
-complex: many parts, SATB style, melody line, rhythms
+
+
+
 Aspects that seem less musical in nature
 Vibrotactile clues in our game are directional in nature. They point in specific directions and therefore have a spatial direction. 
-
-They are intended to provide the following messages to the game-player:
-go this way / don?t go that way
-you're getting ?warmer? / you?re getting ?colder?
-you're performing the correct movement / you?re performing the wrong movement
-
-The first two of these are spatial in nature and are also metaphorical, in that they refer to navigating through some kind of virtual space. The last one is kinesthetic in that it refers to moving your limbs through space in some preferred way.
-
-Music does not lend itself, on first examination, to these sorts of concepts or metaphors. It is possible that panning effects in midi might lend themselves to some spatial messages if you have multiple channels situated in space. Yet, it is unclear what music that could be interpreted as ?go this way? would look like. 
-
 
 \section{Discussion}
 \section{Future Work}

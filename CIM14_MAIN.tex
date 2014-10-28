@@ -102,7 +102,7 @@ Due to their potentially non-disruptive nature, vibrotactile devices could aid i
 \subsection{Tactile authoring for vibrotactile devices}
 Wearable tactile devices are increasing in popularity, especially for handsfree applications. Tools for authoring of tactile patterns for these devices makes the job much easier. Paneels, et al. describe a system for easy prototyping of tactile patterns based on a graphic representation of the shape of the device. A vibrotactile editor represents vibration pitch by vertical placement of notes, as in SMN. They describe the difficulty in designing such patterns by non-experts since it pre-supposes knowledge of music notation as well as other technical area like waveform design. Nor does the system support tactile design for multiple actuators \cite{paneels2013tactiped}.\\
 
-Brown examines how musical techniques can be applied to tact on design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visa icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}.\\ 
+Brown examines how musical techniques can be applied to tact on design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visual icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}.\\ 
 
 Gunther explores the notion of tactile composition, which he views as a novel coupling of haptics technology and music, for the purpose of creating aesthetically appealing tactile compositions. He notes the close relation between sound and touch in all musical performance. He later describes the complex psychophysics that informs the composition of spatio-temporal patterns on the skin  \cite{gunther2003cutaneous}. 
 
@@ -124,8 +124,8 @@ Our notational approach for our wrist-wearable device is to follow standard musi
 \item A note represents an activation of a component. A component can be of several types (vibe motor, LED, etc.). Place notes on normal, five line staves.
 \item Represent note durations by note type (for example, quarter, half and whole notes), dots and by ties between notes of the same pitch.
 \item If notes are pitched, indicate their pitch through their vertical placement on a staff. If notes are unpitched, represent different components (e.g. different types of vibe motors or LEDs) using various note heads or annotations.
-\item Different \textit{parts} are on separate staves. One tactor type playing the same notes at the same time represents playing in \textit{unison}. For example, eight tactors playing in unison can be represented as one part; there is no need to repeat the same information eight times. 
-\item Simultaneous notes, or \textit{chords} are stacked vertically, as in SMN.
+\item Different \textit{parts} are on separate staves. One tactor type playing the same notes at the same time represents playing in \textit{unison}. For example, eight tactors playing in unison can be represented as one part.
+\item Simultaneous notes, or \textit{chords}, are stacked vertically as in SMN.
 \end{itemize}
 
 As a second step we need to translate the nomenclature from our domain of vibrating wrist wearables to that of standard music. The flowing table indicates the mapping we have applied from our domain to that of music notation:
@@ -141,9 +141,10 @@ Vibrotactile term & SMN term \\
 Activation of one component & Note \\
 Activation duration & Note duration \\
 One type of component & Instrument \\
-Series of activations for one instrument & Part \\
+Series of activations for one component & Part \\
 Frequency of an activation & Pitch \\
-Simultaneous activations w/ multiple pitches & Chord \\ 
+Simultaneous activations w/ multiple pitches & Chord \\
+Integrated series of activations & Composition \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -159,8 +160,8 @@ As with aural music, suitable intensities for vibrotactile devices range from th
 \subsection{Duration}
 If vibrotactile notes are of short duration they are perceived as sharp taps or jobs in the skin \cite{gunther2003cutaneous}. MORE to be added HERE.
 
-\subsection{Vibrotactile clues}
-As noted above one of the primary use cases for our vibrotractile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: 'Go this way / don't go that way,'
+\section{Spatial patterns and vibrotactile clues}
+As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: 'Go this way / don't go that way,'
 'You're getting warmer / you're getting colder,' and 
 'You're performing the correct movement / you're performing the wrong movement.'\\
 
@@ -226,7 +227,7 @@ MORE to be added HERE...
 \section{Future Work}
 
 
-Our work consists of quick interation of devices and authoring of activation patterns for a several devices. This work is motivated by both research as well as aesthetic considerations. Pattern authoring depends crucially on the nature of the device being authored for and its purpose. We consider two aspects that seem particularly promising for future development in this area: the design of vibrotactile patterns to enhance and inform transmedia narratives, and the creation of aesthetically appealing vibrotactile patterns in a variety of musical 'genres.' Our research here only scratches the surfaces in those two areas. 
+Our work consists of quick iteration of devices and authoring of activation patterns for a several devices. This work is motivated by both research as well as aesthetic considerations. Pattern authoring depends crucially on the nature of the device being authored for and its purpose. We consider two aspects that seem particularly promising for future development in this area: the design of vibrotactile patterns to enhance and inform transmedia narratives, and the creation of aesthetically appealing vibrotactile patterns in a variety of musical 'genres.' Our research here only scratches the surfaces in those two areas. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

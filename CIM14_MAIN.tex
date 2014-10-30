@@ -1,6 +1,7 @@
 \documentclass[a4paper, twocolumn]{article}
 \usepackage{booktabs}
 
+
 \input{CIM14_settings}
  
 \begin{document}
@@ -70,6 +71,8 @@ A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs a
   \item provide aesthetically attractive and evocative vibe and light displays corresponding to narrative points in a story.\\
 \end{enumerate}
 
+It is use case no. 3 that we consider for its potential musicality and the applicability of musical-inspired pattern design. These patterns must be suitable for low resolution vibrotactile arrays -- in our case a 2x5 circular array of vibe motors, or tactors, that encircle the wrist (Figure ~\ref{fig:braceletRendering}).\\
+
 \begin{figure}[htb]
     \begin{center}
         \includegraphics[width=0.4\textwidth]{graphics/bracelet-02.png}
@@ -77,10 +80,14 @@ A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs a
     \caption{Bracelet design with 2x5 tactor array.\label{fig:braceletRendering}}
 \end{figure}
 
-It is use cases no. 3 and 4 that we consider for their potential musicality and the applicability of musical-inspired pattern design. These patterns must be suitable for low resolution vibrotactile arrays -- in our case a 2x5 circular array of vibe motors, or tactors, that encircle the wrist (Figure ~\ref{fig:braceletRendering}).\\
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{graphics/hudsonBand.png}
+    \end{center}
+    \caption{A user playing a vibrotactile \textit{Simon Says} game on an earlier prototype. \label{fig:braceletRendering}}
+\end{figure}
 
-Mapping of types of things that are commonly expressed using standard musical notation (SMN), entities such as notes with durations, parts, and instruments need to translated, or mapped, from the music domain to that of vibrotactile devices. This mapping has proven to be useful and appears to lead to interesting possibilities for pattern design for these devices.   
-
+Mapping of types of things that are commonly expressed using standard musical notation (music notation), entities such as notes with durations, parts, and instruments need to translated, or mapped, from the music domain to that of vibrotactile devices. This mapping has proven to be useful and appears to lead to interesting possibilities for pattern design for these devices.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
@@ -96,20 +103,20 @@ Typically, haptic devices beyond experimental contexts are either wearable or ho
 Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}. Vibrational patterns suitable for a wrist device are much less complex than those designed for auditory perception due to the constrained perceptual channel of the cutaneous and kinaesthetic possibilities of the wrist compared to that of our ears.\\  
 
 \subsection{Tactile authoring for vibrotactile devices}
-Wearable tactile devices are increasing in popularity, especially for handsfree applications. Tools for authoring of tactile patterns for these devices makes the job much easier. Panëels, et al. describe a system for easy prototyping of tactile patterns based on a graphic representation of the shape of the device. A vibrotactile editor represents vibration pitch by vertical placement of notes, as in SMN. They describe the difficulty in designing such patterns by non-experts since it pre-supposes knowledge of music notation as well as other technical area like waveform design. Nor does the system support tactile design for multiple actuators \cite{paneels2013tactiped}. Brown examines how musical techniques can be applied to tacton design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visual icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}. Gunther explores the notion of tactile composition, which he views as a novel coupling of haptics technology and music, for the purpose of creating aesthetically appealing tactile compositions. He notes the close relation between sound and touch in all musical performance. He later describes the complex psychophysics that informs the composition of spatio-temporal patterns on the skin  \cite{gunther2003cutaneous}. 
+Wearable tactile devices are increasing in popularity, especially for handsfree applications. Tools for authoring of tactile patterns for these devices makes the job much easier. Panëels, et al. describe a system for easy prototyping of tactile patterns based on a graphic representation of the shape of the device. A vibrotactile editor represents vibration pitch by vertical placement of notes, as in music notation. They describe the difficulty in designing such patterns by non-experts since it pre-supposes knowledge of music notation as well as other technical area like waveform design. Nor does the system support tactile design for multiple actuators \cite{paneels2013tactiped}. Brown examines how musical techniques can be applied to tacton design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visual icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}. Gunther explores the notion of tactile composition, which he views as a novel coupling of haptics technology and music, for the purpose of creating aesthetically appealing tactile compositions. He notes the close relation between sound and touch in all musical performance. He later describes the complex psychophysics that informs the composition of spatio-temporal patterns on the skin  \cite{gunther2003cutaneous}. 
 
 \subsection{Multiple actuator devices}
 Devices that contain several vibrotactile actuators are common in the literature\cite{gunther2003cutaneous} \cite{lindeman2004towards} \cite{lindeman2006wearable} \cite{ertan1998wearable} \cite{brown2007tactons}. These devices tend to be placed at various locations around the body, or in tiny pin arrays suitable for fingertip stimulation \cite{brewster2004tactons}. The design of tactile patterns depends on the configuration and placement of the actuators. The purpose of having multiple actuators is distribute notifications of events in places around the body that will be noticed while people do other physically or cognitively demanding activities \cite{lindeman2006wearable}, to transmit symbolic information similar to the fingertip sensing of braille \cite{brewster2004tactons}, to develop skills with polyphonic rhythms  \cite{holland2010feeling}, providing feedback for digital musical instruments \cite{marshall2006vibrotactile} \cite{schumacher2013vibrotactile}, or to create aesthetically appealing patterns for the skin \cite{gunther2003cutaneous}. A wrist-worn bracelet similar to our device is described in \cite{paneels2013tactiped}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Designing patterns using standard music notation}
+\section{Designing patterns using music notation}
 
 \subsection{Introduction}
-This research employs the text-based music engraving and compositional tool Lilypond \cite{nienhuys2003lilypond}. The application Frescobaldi [http://frescobaldi.org] was used as a front-end to Lilypond. Writing music using Lilypond is a similar process to writing papers using the document preparation system LaTex. Like LaTex, its textual input can be easily version-controlled. The output of Lilypond follows SMN conventions and is of high quality. Once learned to a rudimentary level Lilypond is a useful tool for experimenting with SMN. Lilypond can easily output MIDI code. This MIDI is used to drive the actuator array in the vibrotactile bracelet using the standard Arduino MIDI library. The complete workflow is to first compose music in Frescobaldi/Lilypond, then output a MIDI file from the Lilypond source, import this MIDI file into a track in Ableton Live, send a MIDI stream out from Ableton into a dedicated USB MIDI cable and then read this MIDI data in Arduino, using MIDI-read() function. The workflow proved to be quite workable as an experimental technique.
+This research employs the text-based music engraving and compositional tool Lilypond \cite{nienhuys2003lilypond}. The application Frescobaldi [http://frescobaldi.org] was used as a front-end to Lilypond. Writing music using Lilypond is a similar process to writing papers using the document preparation system LaTex. Like LaTex, its textual input can be easily version-controlled. The output of Lilypond follows music notation conventions and is of high quality. Once learned to a rudimentary level Lilypond is a useful tool for experimenting with music notation. Lilypond can easily output MIDI code. This MIDI is used to drive the actuator array in the vibrotactile bracelet using the standard Arduino MIDI library. The complete workflow is to first compose music in Frescobaldi/Lilypond, then output a MIDI file from the Lilypond source, import this MIDI file into a track in Ableton Live, send a MIDI stream out from Ableton into a dedicated USB MIDI cable and then read this MIDI data in Arduino, using MIDI-read() function. The workflow proved to be quite workable as an experimental technique.
 
 \subsection{Basic mapping conventions}
-Our notational approach for our wrist-wearable device is to follow standard music notation (SMN) conventions and to see where these conventions lead us in the domain of vibrotactile devices:
+Our notational approach for our wrist-wearable device is to follow music notation conventions and to see where these conventions lead us in the domain of vibrotactile devices:
 
 \begin{itemize}
 \item Represent time horizontally from left to right. Notes to the right occur later.
@@ -117,10 +124,10 @@ Our notational approach for our wrist-wearable device is to follow standard musi
 \item Represent note durations by note type (for example, quarter, half and whole notes), dots and by ties between notes of the same pitch.
 \item If notes are pitched, indicate their pitch through their vertical placement on a staff. If notes are unpitched, represent different components (e.g. different types of vibe motors or LEDs) using various note heads or annotations.
 \item Different \textit{parts} are on separate staves. One tactor type playing the same notes at the same time represents playing in \textit{unison}. For example, eight vibe motors playing in unison can be represented as one part.
-\item Simultaneous notes, or \textit{chords}, are stacked vertically as in SMN.
+\item Simultaneous notes, or \textit{chords}, are stacked vertically as in music notation.
 \end{itemize}
 
-We also need to translate the nomenclature from the domain of wrist wearables to that of SMN. This mapping is shown in the following table:
+We also need to translate the nomenclature from the domain of wrist wearables to that of music notation. This mapping is shown in the following table:
 
 \begin{table}[htbp]
 \caption{Vibrotactile vs Music notation terms}
@@ -128,7 +135,7 @@ We also need to translate the nomenclature from the domain of wrist wearables to
 \centering
 \begin{tabular}{@{}ll@{}}
 \toprule
-Vibrotactile term & SMN term \\ 
+Vibrotactile term & Music notation term \\ 
 \midrule
 Activation of one component & Note \\
 Activation duration & Note duration \\
@@ -144,26 +151,26 @@ Integrated series of activations & Composition \\
 Therefore, the basic components of music are present even with a wrist-wearable vibrotactile device that does not, at first, seem to have a musical aspect: \textit{notes} with durations, pitched notes played on various discrete \textit{instruments} (vibe motors and LED lights), various \textit{parts,} or \textit{voices,} played in polyphonic \textit{compositions} and the dynamics of various parts playing together. 
 
 \subsection{Pitch}
-Vertical placement for normal, pitched notes in SMN indicates their pitch. Pitch differentials are possible with tactors, as their frequency can be modelled using standard pulse-width modulation (PWM) techniques \cite{lindeman2006wearable}. The pitch of a note is one of its primary psychoacoustic attributes, along with its duration, loudness and timbre. Unpitched notes are those for which the frequency is indeterminate, too complex or unrelated to the pitch contours of melodic or harmonic parts. The perception of pitch in vibrotactile devices differs from that of normal acoustic instruments. The number of frequency differences is much reduced and depends on amplitude. The skin's maximal frequency response occurs around 250 Hz \cite{gunther2003cutaneous}. There may be as few as five frequency distinctions possible with cutaneous perception, or as many as ten \cite{van2003distilling}.  So, the chromatic range of pitches and frequencies over many octaves as normally represented using music notation is not suitable for cutaneous perception, but that some, relatively minor variation in pitch is possible. These considerations would seem not to preclude the use of SMN for our purposes.
+Vertical placement for normal, pitched notes in music notation indicates their pitch. Pitch differentials are possible with tactors, as their frequency can be modelled using standard pulse-width modulation (PWM) techniques \cite{lindeman2006wearable}. The pitch of a note is one of its primary psychoacoustic attributes, along with its duration, loudness and timbre. Unpitched notes are those for which the frequency is indeterminate, too complex or unrelated to the pitch contours of melodic or harmonic parts. The perception of pitch in vibrotactile devices differs from that of normal acoustic instruments. The number of frequency differences is much reduced and depends on amplitude. The skin's maximal frequency response occurs around 250 Hz \cite{gunther2003cutaneous}. There may be as few as five frequency distinctions possible with cutaneous perception, or as many as ten \cite{van2003distilling}.  So, the chromatic range of pitches and frequencies over many octaves as normally represented using music notation is not suitable for cutaneous perception, but that some, relatively minor variation in pitch is possible. These considerations would seem not to preclude the use of music notation for our purposes.
 
 \subsection{Intensity}
-As with aural music, suitable intensities for vibrotactile devices range from those that are barely perceptual to those that become uncomfortable. The intensity of a vibrotactile stimulus is defined by the strength or magnitude of its vibration. Classic work in this area was done by measuring Weber fractions and just noticeable (JNDs). Frequency and intensity parameters interact in vibrotactile studies in that differences can be ascribed to combinations of parameters \cite{van2003distilling}. The intensity threshold is adaptable and depends on a variety of parameters such as actuator used, location of the stimulation, person, or frequency of the vibration \cite{jonas2008tactile}. Geldard discovered that while we can discriminate 15 levels of vibrotactile stimuli intensity but that no more than three intensity levels can be identified absolutely \cite{geldard1960some}. Considerations of the amplitude envelope (amplitude, delay, sustain, release, or ADSR) and with amplitude modulations such as tremolo or pitch modulations like vibrato  are also important with vibrotactile stimulation \cite{gunther2003cutaneous}. 
+The intensity of a vibrotactile stimulus is defined by the strength or magnitude of its vibration. As with aural music, suitable intensities for vibrotactile devices range from those that are barely perceptual to those that become uncomfortable. Classic work in this area was done by measuring Weber fractions and just noticeable differences (JNDs). Frequency and intensity parameters interact in vibrotactile studies in that differences can be ascribed to combinations of parameters \cite{van2003distilling}. The intensity threshold is adaptable and depends on a variety of parameters such as actuator used, location of the stimulation, person, or frequency of the vibration \cite{jonas2008tactile}. Geldard discovered that while we can discriminate 15 levels of vibrotactile stimuli intensity but that no more than three intensity levels can be identified absolutely \cite{geldard1960some}. Considerations of the amplitude envelope (amplitude, delay, sustain, release, or ADSR) and with amplitude modulations such as tremolo or pitch modulations like vibrato  are also important with vibrotactile stimulation \cite{gunther2003cutaneous}. 
 
 \subsection{Duration}
-The term duration refers to the length of the tactile stimulus -- from onset to the termination of the stimulus. There exist various reference values for duration and and is generally measured in milliseconds \cite{jonas2008tactile}. It is important to ensure that the individual vibrotactile stimuli are within a reasonable range of durations. Geldard found that stimuli duration roughly between 0.1 and two seconds is reasonable \cite{geldard1960some}. If vibrotactile notes are of short duration they are perceived as sharp taps or jobs in the skin \cite{gunther2003cutaneous}, while stimuli that lasted longer than the upper limit of two seconds delays communication \cite{jonas2008tactile}. Dynamic properties of a vibration signal such as its envelope, duration, and the presence of masking stimuli may also affect perceptual threshold levels \cite{birnbaum2007musical}.
+The term duration refers to the length of the tactile stimulus -- from onset to the termination of the stimulus. There exist various reference values for duration and and is generally measured in milliseconds \cite{jonas2008tactile}. It is important to ensure that the individual vibrotactile stimuli are within a reasonable range of durations. Geldard found that stimuli duration roughly between 0.1 and two seconds is reasonable \cite{geldard1960some}. If vibrotactile notes are of short duration they are perceived as sharp taps or jabs in the skin \cite{gunther2003cutaneous}, while stimuli that lasted longer than the upper limit of two seconds delays communication \cite{jonas2008tactile}. Dynamic properties of a vibration signal such as its envelope, duration, and the presence of masking stimuli may also affect perceptual threshold levels \cite{birnbaum2007musical}.
+
+\subsection{Spatial patterns and vibrotactile clues}
+As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: \textit{Go this way / don't go that way}, and 
+\textit{You're getting warmer / you're getting colder}. These are spatial and metaphorical in nature and refer to navigating through some kind of virtual space. Panëels discusses vibrotactile design for metaphorical patterns such as \textit{turn back} on devices that have actuators with spatial patterns, but does not do it in a musical context \cite{paneels2013tactiped}. Ideally these gameplay clues are either self-explanatory or easy for the player to learn. Music as it is commonly notated does not lend itself to these sorts of concepts or metaphors. It is unclear at first what music that could be interpreted as \textit{go this way} might look like. Like in any design or artistic domain there are many solutions to a given problem. There are probably many direct and indirect artistic means for designing such a pattern. \\
+
+Although music that has spatial aspects is common, such as the surround sound of Thomas Tallis' \textit{Spem in Alium} [1570], or the call and response of antiphonal works, standard music notation tends not to focus on the specification of spatial aspects in music performance even though aural perception is intensively spatial. There is no specification of where instruments or performers are arranged in space. Instruments are usually placed together in clusters, as opposed to being evenly distributed, but this is a performance convention and is outside of the notation itself.\\
+
+Such clues should probably incorporate some notion of metaphorical movement through a space. For \textit{Go this way} the musical should point in the intended direction. A vibrotactile device simply having a series of tactors activating in the intended direction might be a good first step, much like a flashing series of traffic lights scrolling to the right might suggest to proceed to the right. 
 
 
-\section{Spatial patterns and vibrotactile clues}
-As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: 'Go this way / don't go that way,'
-'You're getting warmer / you're getting colder,' and 
-'You're performing the correct movement / you're performing the wrong movement.'\\
-
-The first two of these are spatial in nature and are also metaphorical, in that they refer to navigating through some kind of virtual space. The last one is kinesthetic in that it refers to moving your limbs through space in some preferred way. Music does not lend itself, on first examination, to these sorts of concepts or metaphors. It is unclear at first what music that could be interpreted as 'go this way' might look like. It seem though that it should incorporate some notion of movement through a space. SMN tends not to focus too much on such spatial considerations. Basic, notated music has no spatial dimensions. There is no specification of where instruments or performers are arranged in space. Instruments are usually placed together in cluster (as opposed to being evenly dispersed amongst performers playing other parts) but this is a performance convention and is outside of the notation itself.\\
 
 \subsection{Music with one spatial dimension (1D = linear)}
-Music with one dimension is that which instruments follow some kind of spatial linear progression, such as pan or a sweep. 
-
-Figure ~\ref{fig:arrowsMoving00}. shows one vibe motor activating in a simple rhythm with a simple, rhythmic pitch change. By the conventions of music notation it is clear that there is a regular repetitive rhythm represented. Of course, to know even this requires at least a rudimentary knowledge of music notation. 
+Music with one dimension is that which instruments follow some kind of spatial linear progression, such as pan or a sweep. Figure ~\ref{fig:arrowsMoving00}. shows one vibe motor activating in a simple rhythm with a simple, rhythmic pitch change. By the conventions of music notation it is clear that there is a regular repetitive rhythm represented. Of course, to know even this requires at least a rudimentary knowledge of music notation.\\ 
 
 %\begin{figure}[htb]
 %    \begin{center}
@@ -198,34 +205,29 @@ Figure ~\ref{fig:arrowsMoving01}. shows three vibe motors activating in a sequen
 
 \begin{figure}[htb]
     \begin{center}
-        \includegraphics[width=0.4\textwidth]{graphics/arrowsMoving-01.pdf}
+        \includegraphics[width=0.3\textwidth]{graphics/arrowsMoving-01.pdf}
     \end{center}
     \caption{Threes vibes activating sequentially.\label{fig:arrowsMoving01}}
 \end{figure}
 
-The only indication that Vibe 02 might be placed after Vibe 01 is because of the numbering system. Note that the spatial dimension described is only one dimensional. The vibe motors are arranged along a line. With vibe bracelets what is desirable is to represent two dimensions such that patterns can be created across the skin. It would be useful if the spatial dimension Is there any dimension is SMN that indicates 2D spatial placement of instruments? 
+The only indication that Vibe 02 might be placed after Vibe 01 is because of the numbering system. Note that the spatial dimension described is only one dimensional. The vibe motors are arranged along a line. With vibe bracelets what is desirable is to represent two dimensions such that patterns can be created across the skin. It would be useful if the spatial dimension Is there any dimension is music notation that indicates 2D spatial placement of instruments? 
 
 \subsection{Music with two spatial dimensions (2D = planar)}
 
 This highlights a problem with using musical notation for describing the activation of spatially separate vibe motors: when you want to describe the movement of vibrations spatially then where the vibe motors are located in space is essential to represent using the notation. With pitched notation the pitch, timing and rhythm of the music tends to be its most important aspect. The spatial placement of the instruments playing different parts is less of a concern. How then can vibe motors activating in a spatially differentiated manner be represented -- compactly and efficiently -- using standard music notation?\\
 
-MORE to be added HERE...
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
-
-
+%\section{Discussion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Future Work}
-
 
 Our work consists of quick iteration of devices and authoring of activation patterns for a several devices. This work is motivated by both research as well as aesthetic considerations. Pattern authoring depends crucially on the nature of the device being authored for and its purpose. We consider two aspects that seem particularly promising for future development in this area: the design of vibrotactile patterns to enhance and inform transmedia narratives, and the creation of aesthetically appealing vibrotactile patterns in a variety of musical 'genres.' Our research here only scratches the surfaces in those two areas. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-Music notation is a finely structured notational system. It requires an expert-level of competence to read its finest level of detail, however, this type of expertise is not hard to find in cultures where notated musical composition and performance is well-established. What is much less common is cross-expertise in both music notation and vibrotactile technologies. Standard musical notation includes many dimensions but in its standard forms does not easily lend itself to inclusion of more non-musical dimensions such as required for the specification of 2 and 3D patterns for vibrotactile arrays. Howver, it appears that will some minor additions to SMN this type of authoring technique is much more appealing and culturally evocative than the alternatives. 
+Music notation is a finely structured notational system. It requires an expert-level of competence to read its finest level of detail, however, this type of expertise is not hard to find in cultures where notated musical composition and performance is well-established. What is much less common is cross-expertise in both music notation and vibrotactile technologies. Standard musical notation includes many dimensions but in its standard forms does not easily lend itself to inclusion of more non-musical dimensions such as required for the specification of 2 and 3D patterns for vibrotactile arrays. Howver, it appears that will some minor additions to music notation this type of authoring technique is much more appealing and culturally evocative than the alternatives. 
 
 \section{Acknowledgements}
 This work has been supported by the International Science and Technology Partnerships Canada Inc (ISTP) on the project Multi-platform Game Distribution System for Popular and Experimental Technologies (MGDS-PET) and by grants from the National Sciences and Engineering Research Council of Canada (NSERC). We would also like to thank Xenophile Media Inc., Vicki Clough, Shin-you Hou, Tegan Power, Ryan Maksymic, Takis Zourntos for the their help in the development of this project. 

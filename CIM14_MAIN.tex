@@ -1,5 +1,6 @@
 \documentclass[a4paper, twocolumn]{article}
 \usepackage{booktabs}
+\usepackage{tikz}
 
 
 \input{CIM14_settings}
@@ -59,9 +60,7 @@ Wrist-wearable vibrotactile arrays can serve many functions: typically they are 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-We are developing a MIDI-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors and buttons that activate when vibe motors are touched. It is controlled by a Bluetooth-enabled (low energy) LightBlue Bean microprocessor with a 3-axis accelerometer. This device combines several functions, including the control of gameplay from a smartphone or tablet, visual display of user's heart rate and interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}.\\
-
-The gaming app involves a collections and discovery game for children aged 8-14 called \textit{Time Tremors} in which children collect crystals in order to unlock treasures that they then view on the accompanying smartphone. There is also a television series that is integrated with this gameplay \cite{holler2014time}. Crystals are earned by the player through simple puzzle-solving, artifact discovery and physical activities. The end result is a sensory-intensive, transmedia game intended to encourage physical fitness and cultural exploration in children. On the device vibrotactile patterns play a major part in user interaction and the method of authoring patterns in a shareable and standardized way becomes an important consideration.\\
+We are developing a MIDI-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors and buttons that activate when vibe motors are touched. It is controlled by a Bluetooth-enabled (low energy) LightBlue Bean microprocessor with a 3-axis accelerometer. This device combines several functions, including the control of gameplay from a smartphone or tablet, visual display of user's heart rate and interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}. The gaming app involves a collections and discovery game for children aged 8-14 called \textit{Time Tremors} in which children collect crystals in order to unlock treasures that they then view on the accompanying smartphone. There is also a television series that is integrated with this gameplay \cite{holler2014time}. Crystals are earned by the player through simple puzzle-solving, artifact discovery and physical activities. The end result is a sensory-intensive, transmedia game intended to encourage physical fitness and cultural exploration in children. On the device vibrotactile patterns play a major part in user interaction and the method of authoring patterns in a shareable and standardized way becomes an important consideration.\\
 
 A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is low-level code written in the C or Wiring languages. The design of vibe patterns for such devices is a specialized, yet multi-disciplinary domain that straddles concerns for design of human computer interfaces suitable for wearables, and for potentially artistic patterns that look and feel attractive on the wrist. Basic use cases for the wrist-wearable device include:
 \begin{enumerate}
@@ -71,7 +70,7 @@ A wrist-wearable vibrotactile device, or what we call a 'vibe bracelet,' needs a
   \item provide aesthetically attractive and evocative vibe and light displays corresponding to narrative points in a story.\\
 \end{enumerate}
 
-It is use case no. 3 that we consider for its potential musicality and the applicability of musical-inspired pattern design. These patterns must be suitable for low resolution vibrotactile arrays -- in our case a 2x5 circular array of vibe motors, or tactors, that encircle the wrist (Figure ~\ref{fig:braceletRendering}).\\
+It is use case no. 3 that we consider for its potential musicality and the applicability of musical-inspired pattern design. These patterns must be suitable for low resolution vibrotactile arrays -- in our case a 2x5 circular array of vibe motors, or tactors, that encircle the wrist (Figure ~\ref{fig:braceletRendering}). Mapping of types of things that are commonly expressed using standard musical notation (music notation), entities such as notes with durations, parts, and instruments need to translated, or mapped, from the music domain to that of vibrotactile devices. This mapping has proven to be useful and appears to lead to interesting possibilities for pattern design for these devices.
 
 \begin{figure}[htb]
     \begin{center}
@@ -87,20 +86,14 @@ It is use case no. 3 that we consider for its potential musicality and the appli
     \caption{A user playing a vibrotactile \textit{Simon Says} game on an earlier prototype. \label{fig:braceletRendering}}
 \end{figure}
 
-Mapping of types of things that are commonly expressed using standard musical notation (music notation), entities such as notes with durations, parts, and instruments need to translated, or mapped, from the music domain to that of vibrotactile devices. This mapping has proven to be useful and appears to lead to interesting possibilities for pattern design for these devices.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related Work}
 
 \subsection{Haptic feedback and communication}
-Haptic communication through force feedback is a common technique used in gaming. Its purpose is to introduce the sense of touch to interactions such as movement through space, collision with and proximity to objects, notification of awarding of game points and of proximity to dangerous situations. Touch can add sensual aspects and realism to computer interactions for devices too small to have large visual displays and may be useful in reducing sensory overloads from other perceptual modalities such as those used in complex graphical interfaces \cite{oakley2000putting}. The largest organ of the human body is the skin and has great potential for the transmittal of information and sensation \cite{lindeman2006wearable} \cite{brewster2004tactons}. Oakley provides a useful taxonomy of haptic-related terms, such as proprioceptive, kinesthetic and tactile. Haptic is a general term relating to the sense of touch, while tactile is more specific and relates to the sensation of pressure rather than that of temperature or pain \cite{oakley2000putting}. \\
-
-Haptic feedback has a long history in the design of computer mice and of other hand controllers \cite{yang2005novel}. Touch of course is useful in generating intimacy in normal social situations \cite{bronner1982haptic}. The new Apple Watch also enables wearers to communicate their heartbeat to others wirelessly \cite{marks2014pulse}. Touch can also be used to coordinate action in online or gaming situations \cite{ho1998experiment}. \\
+Haptic communication through force feedback is a common technique used in gaming. Its purpose is to introduce the sense of touch to interactions such as movement through space, collision with and proximity to objects, notification of awarding of game points and of proximity to dangerous situations. Touch can add sensual aspects and realism to computer interactions for devices too small to have large visual displays and may be useful in reducing sensory overloads from other perceptual modalities such as those used in complex graphical interfaces \cite{oakley2000putting}. The largest organ of the human body is the skin and has great potential for the transmittal of information and sensation \cite{lindeman2006wearable} \cite{brewster2004tactons}. Oakley provides a useful taxonomy of haptic-related terms, such as proprioceptive, kinesthetic and tactile. Haptic is a general term relating to the sense of touch, while tactile is more specific and relates to the sensation of pressure rather than that of temperature or pain \cite{oakley2000putting}. Haptic feedback has a long history in the design of computer mice and of other hand controllers \cite{yang2005novel}. Touch of course is useful in generating intimacy in normal social situations \cite{bronner1982haptic}. The new Apple Watch also enables wearers to communicate their heartbeat to others wirelessly \cite{marks2014pulse}. Touch can also be used to coordinate action in online or gaming situations \cite{ho1998experiment}. \\
 
 \subsection{Wearable vibrotactile devices}
-Typically, haptic devices beyond experimental contexts are either wearable or holdable. One challenge of wearable devices is how to encourage people to wear them. People tend to be very particular about the look and feel of devices that provide potentially intimate notifications. The purposes of such devices are varied and include emulation of attention-getting practices such as the squeezing of wrists, touching of shoulders and pats on arms. As Baumann notes, such social gestures may include a wealth of sub-texts including urgency, affection and reinforcement of social hierarchies \cite{baumann2010emulating}.\\
-
-Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}. Vibrational patterns suitable for a wrist device are much less complex than those designed for auditory perception due to the constrained perceptual channel of the cutaneous and kinaesthetic possibilities of the wrist compared to that of our ears.\\  
+Typically, haptic devices beyond experimental contexts are either wearable or holdable. One challenge of wearable devices is how to encourage people to wear them. People tend to be very particular about the look and feel of devices that provide potentially intimate notifications. The purposes of such devices are varied and include emulation of attention-getting practices such as the squeezing of wrists, touching of shoulders and pats on arms. As Baumann notes, such social gestures may include a wealth of sub-texts including urgency, affection and reinforcement of social hierarchies \cite{baumann2010emulating}. Due to their potentially non-disruptive nature, vibrotactile devices could aid in tasks in which the user's attention might be devoted to some other task, such as navigation, or gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips.\cite{lindeman2004towards}. Vibrational patterns suitable for a wrist device are much less complex than those designed for auditory perception due to the constrained perceptual channel of the cutaneous and kinaesthetic possibilities of the wrist compared to that of our ears.\\  
 
 \subsection{Tactile authoring for vibrotactile devices}
 Wearable tactile devices are increasing in popularity, especially for handsfree applications. Tools for authoring of tactile patterns for these devices makes the job much easier. Panëels, et al. describe a system for easy prototyping of tactile patterns based on a graphic representation of the shape of the device. A vibrotactile editor represents vibration pitch by vertical placement of notes, as in music notation. They describe the difficulty in designing such patterns by non-experts since it pre-supposes knowledge of music notation as well as other technical area like waveform design. Nor does the system support tactile design for multiple actuators \cite{paneels2013tactiped}. Brown examines how musical techniques can be applied to tacton design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visual icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}. Gunther explores the notion of tactile composition, which he views as a novel coupling of haptics technology and music, for the purpose of creating aesthetically appealing tactile compositions. He notes the close relation between sound and touch in all musical performance. He later describes the complex psychophysics that informs the composition of spatio-temporal patterns on the skin  \cite{gunther2003cutaneous}. 
@@ -161,17 +154,43 @@ The term duration refers to the length of the tactile stimulus -- from onset to 
 
 \subsection{Spatial patterns and vibrotactile clues}
 As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: \textit{Go this way / don't go that way}, and 
-\textit{You're getting warmer / you're getting colder}. These are spatial and metaphorical in nature and refer to navigating through some kind of virtual space. Panëels discusses vibrotactile design for metaphorical patterns such as \textit{turn back} on devices that have actuators with spatial patterns, but does not do it in a musical context \cite{paneels2013tactiped}. Ideally these gameplay clues are either self-explanatory or easy for the player to learn. Music as it is commonly notated does not lend itself to these sorts of concepts or metaphors. It is unclear at first what music that could be interpreted as \textit{go this way} might look like. Like in any design or artistic domain there are many solutions to a given problem. There are probably many direct and indirect artistic means for designing such a pattern. \\
+\textit{You're getting warmer / you're getting colder}. These are spatial and metaphorical in nature and refer to navigating through some kind of virtual space. Panëels discusses vibrotactile design for metaphorical patterns such as \textit{turn back} on devices that have actuators with spatial patterns, but does not do it in a musical context \cite{paneels2013tactiped}. Ideally these gameplay clues are either self-explanatory or easy for the player to learn. Such clues should probably incorporate some notion of metaphorical movement through a space. For \textit{Go this way} the musical should point in the intended direction. A vibrotactile device simply having a series of tactors activating in the intended direction might be a good first step, much like a flashing series of traffic lights scrolling to the right might suggest to proceed to the right (Figure ~\ref{fig:tactorArray}).\\
 
-Although music that has spatial aspects is common, such as the surround sound of Thomas Tallis' \textit{Spem in Alium} [1570], or the call and response of antiphonal works, standard music notation tends not to focus on the specification of spatial aspects in music performance even though aural perception is intensively spatial. There is no specification of where instruments or performers are arranged in space. Instruments are usually placed together in clusters, as opposed to being evenly distributed, but this is a performance convention and is outside of the notation itself.\\
+Music as it is commonly notated does not lend itself to these sorts of concepts or metaphors. It is unclear at first what music that could be interpreted as \textit{go this way} might look like. Like in any design or artistic domain there are many solutions to a given problem. There are probably many direct and indirect artistic means for designing such a pattern. Although music that has spatial aspects is common, such as the surround sound of Thomas Tallis' \textit{Spem in Alium} [1570], or the call and response of antiphonal works, standard music notation tends not to focus on the specification of spatial aspects in music performance even though aural perception is intensely spatial. Instrument sections in ensembles are usually placed together in clusters but this is a performance convention and is usually outside of the notation itself.  
 
-Such clues should probably incorporate some notion of metaphorical movement through a space. For \textit{Go this way} the musical should point in the intended direction. A vibrotactile device simply having a series of tactors activating in the intended direction might be a good first step, much like a flashing series of traffic lights scrolling to the right might suggest to proceed to the right. 
+\begin{figure}
+\definecolor{light-gray}{gray}{0.85}
+\definecolor{med-gray}{gray}{0.65}
+\definecolor{dark-gray}{gray}{0.35}
+  	\begin{center}
+	\begin{tikzpicture}[thick,scale=0.4, every node/.style={scale=0.6}]
+	%arrow on top:
+	\draw[thick,->] (0.5,2.5) -- (4.5,2.5);
+	%grid:
+	\draw[step=1cm,gray,very thin] (0,0) grid (5,2);
+	%bottom row:
+	\filldraw[fill=dark-gray, draw=black] (0.5,0.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (1.5,0.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (2.5,0.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (3.5,0.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
+	%top row:
+	\filldraw[fill=dark-gray, draw=black] (0.5,1.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (1.5,1.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (2.5,1.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (3.5,1.5) circle (0.12cm);
+	\filldraw[fill=white, draw=black] (4.5,1.5) circle (0.12cm);
 
-
+	\end{tikzpicture}
+  	\caption{2x5 array of tactors with directional activation.}
+  	\label{fig:tactorArray}
+    	\end{center}
+\end{figure}
 
 \subsection{Music with one spatial dimension (1D = linear)}
-Music with one dimension is that which instruments follow some kind of spatial linear progression, such as pan or a sweep. Figure ~\ref{fig:arrowsMoving00}. shows one vibe motor activating in a simple rhythm with a simple, rhythmic pitch change. By the conventions of music notation it is clear that there is a regular repetitive rhythm represented. Of course, to know even this requires at least a rudimentary knowledge of music notation.\\ 
+Music with one dimension is that which instruments follow some kind of spatial linear progression, such as pan or a sweep. Figure ~\ref{fig:arrowsMoving00}. shows one vibe motor activating in a simple rhythm with a simple, rhythmic pitch change. By the conventions of music notation it is clear that there is a regular repetitive rhythm represented. Of course, to know this requires at least a rudimentary knowledge of music notation.\\ 
 
+%%%%%%%%%%%%% XXXXXXXXXX
 %\begin{figure}[htb]
 %    \begin{center}
 %        \includegraphics[width=0.4\textwidth]{graphics/scaleArduino-01.pdf}
@@ -181,17 +200,11 @@ Music with one dimension is that which instruments follow some kind of spatial l
 
 %\begin{figure}[htb]
 %    \begin{center}
-%        \includegraphics[width=0.4\textwidth]{graphics/drums1-simple.pdf}
-%    \end{center}
-%    \caption{Simple rhythm for two unpitched Arduino components.\label{fig:fig3}}
-%\end{figure}
-
-%\begin{figure}[htb]
-%    \begin{center}
 %        \includegraphics[width=0.4\textwidth]{graphics/drums1-multistaff.pdf}
 %    \end{center}
 %    \caption{Complex rhythm for three Arduino components.\label{fig:fig4}}
 %\end{figure}
+%%%%%%%%%%%%% XXXXXXXXXX
 
 \begin{figure}[htb]
     \begin{center}
@@ -200,8 +213,16 @@ Music with one dimension is that which instruments follow some kind of spatial l
     \caption{One vibe motor playing a simple rhythm.\label{fig:arrowsMoving00}}
 \end{figure}
 
-Figure ~\ref{fig:arrowsMoving01}. shows three vibe motors activating in a sequential motion. Note that all three are playing the same pitch. If the three separate \textit{parts} where placed on the same staff there would be confusion about which note applies to which motor. If the three motors were placed next to each other then their pulsation would have a directionality due to the physical placement of the motors. However, this directionality is less apparent in the notation itself. 
-\\
+%%%%%%%%%%%%% XXXXXXXXXX
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{graphics/drums1-simple.pdf}
+    \end{center}
+    \caption{Simple rhythm for two unpitched Arduino components.\label{fig:fig3}}
+\end{figure}
+%%%%%%%%%%%%% XXXXXXXXXX
+
+Figure ~\ref{fig:arrowsMoving01}. shows three vibe motors activating in a sequential motion. Note that all three are playing the same pitch. If the three separate \textit{parts} where placed on the same staff there would be confusion about which note applies to which motor. If the three motors were placed next to each other then their pulsation would have a directionality due to the physical placement of the motors. However, this directionality is less apparent in the notation itself.
 
 \begin{figure}[htb]
     \begin{center}

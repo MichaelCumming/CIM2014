@@ -382,7 +382,8 @@ Integrated series of activations & Composition \\
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
-\textbf{Devices with no spatial dimension (0D = point)}\\
+\color{red} \textbf{Device with no spatial dimension (0D = point)}\\
+\color{black}
 \vspace{2cm}
 %top diagram
 \begin{tikzpicture}[scale=2]
@@ -391,16 +392,17 @@ Integrated series of activations & Composition \\
 %bottom row:
 \filldraw[fill=blue, draw=black] (0.5,0.5) circle (0.12cm);
 \end{tikzpicture}\\
-\textbf{Device with a single vibe motor}.
+\textbf{Device with a single vibe motor}
 \vspace{1cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=\textwidth]{graphics/arrowsMoving-00.pdf}
+        \includegraphics[width=\textwidth]{graphicsPoster/arrowsMoving-00.pdf}
 \end{figure}
-\textbf{Score for single vibe motor playing simple [solo]-rhythm}.
+\textbf{Score for single vibe motor playing simple solo rhythm}
 \begin{itemize}
 \item Time = horizontal, x-axis
-\item Pitch = vertical, y-axis
+\item Pitch = vertical, y-axis; single pitch for single component
+\item Unpitched notation also suitable
 \item Notation affects only one component
 \end{itemize}
 \end{center}
@@ -414,7 +416,8 @@ Integrated series of activations & Composition \\
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
-\textbf{Devices with one spatial dimension (1D = linear)}\\
+\color{red} \textbf{Device with one spatial dimension (1D = linear)}\\
+\color{black}
 \vspace{2cm}
 %top diagram
 \begin{tikzpicture}[scale=2]
@@ -431,14 +434,16 @@ Integrated series of activations & Composition \\
 \vspace{2cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=\textwidth]{graphics/arrowsMoving-00.pdf}
+        \includegraphics[width=0.9\textwidth]{graphicsPoster/arrowsMoving-5-4.pdf}
 \end{figure}
-\textbf{Score for a line of vibe motors}.
+\textbf{Score for a linear array of vibe motors}
 \begin{itemize}
-\item Time = horizontal, x-axis
-\item Pitch = vertical, y-axis
-\item Notation affects five components
-\item Each component should be independently addressable
+\item Time = horizontal, x-axis (rests are hidden)
+\item Vertical staff position (EGBDF) = vibe motor address
+\item Vertical position no longer signifies pitch
+\item Separate part for each vibe motor
+\item Each component is independently addressable through notation
+\item Accents and other articulations possible
 \end{itemize}
 \end{center}
 \end{minipage}};
@@ -451,7 +456,8 @@ Integrated series of activations & Composition \\
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
-\textbf{Devices with two spatial dimension (2D = planar)}\\
+\color{red} \textbf{Device with two spatial dimension (2D = planar)}\\
+\color{black}
 \vspace{2cm}
 %top diagram
 \begin{tikzpicture}[scale=2]
@@ -471,13 +477,21 @@ Integrated series of activations & Composition \\
 \filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
 
 \end{tikzpicture}\\
-Device with an array of vibe motors.
+\textbf{Device with an array of vibe motors}
 \vspace{2cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=\textwidth]{graphics/arrowsMoving-00.pdf}
+        \includegraphics[width=0.75\textwidth]{graphics/arrowsMoving-01.pdf}
 \end{figure}
-Score for an array of vibe motors.
+\textbf{Score for an array of vibe motors}
+\begin{itemize}
+\item Time = horizontal, x-axis (rests are hidden)
+\item Vertical staff position (EGBDF) = vibe motor address
+\item Vertical position no longer signifies pitch
+\item Separate part for each vibe motor
+\item Each component is independently addressable through notation
+\item Accents and other articulations possible
+\end{itemize}
 \end{center}
 \end{minipage}};
 \end{tikzpicture}
@@ -505,12 +519,12 @@ Score for an array of vibe motors.
 %    \caption{Simple rhythm for two unpitched Arduino components.\label{fig:fig3}}
 %\end{figure}
 
-\begin{figure}[H]
-    \begin{center}
-       \includegraphics[width=0.3\textwidth]{graphics/arrowsMoving-01.pdf}
-  \end{center}
-  \caption{Threes vibes activating sequentially.\label{fig:arrowsMoving01}}
-\end{figure}
+%\begin{figure}[H]
+%    \begin{center}
+%       \includegraphics[width=0.3\textwidth]{graphics/arrowsMoving-01.pdf}
+%  \end{center}
+%  \caption{Threes vibes activating sequentially.\label{fig:arrowsMoving01}}
+%\end{figure}
 
 %Figure ~\ref{fig:arrowsMoving01}. shows three vibe motors activating in a sequential motion. The motors are arranged along a line and therefore are only one dimensional. Since they are playing the same pitch if the three separate parts where placed on the same staff there would be confusion about which note applies to which motor. Because of their linear placement their pulsation has a directionality. However, this directionality is less apparent in the notation itself. The only indication that Vibe 02 might be located after Vibe 01 is because of the numbering of the score. Yet with vibe bracelets it is desirable to be able to represent two dimensions such that common 2D patterns such as moving sprites, radiating waves and the like can be created across the skin. Is it possible to easily represent the activation of a 2D array of instruments using standard music notation?\\
 

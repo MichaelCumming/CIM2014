@@ -11,7 +11,7 @@
  
 \begin{document}
 \bibliographystyle{CIM14}
-\large \color{black}\sffamily %default font size
+\normalsize \color{black}\sffamily %default font size
 
 % TITLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@
     %\caption{\label{fig:arrowsMoving00}}
 \end{figure}
 
-\LARGE \color{black}
+\normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{Michael Cumming, Adam Tindale, Sara Diamond\\
 OCAD University, Toronto, Ontario, Canada}\\
@@ -40,7 +40,7 @@ mcumming@ocadu.ca,
 atindale@faculty.ocadu.ca,
 sdiamond@ocadu.ca\\
 
-\Large
+\normalsize
 % ABSTRACT
 \setlength{\columnsep}{2cm} %must be before \begin{multicols}
 \begin{multicols}{2}
@@ -52,7 +52,7 @@ Wrist-wearable vibrotactile arrays can serve many functions: typically they are 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Huge \color{red}
 \textbf{Introduction}\\
-\large \color{black}
+\normalsize \color{black}
 We are developing a MIDI-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors and buttons that activate when vibe motors are touched. 
 %It is controlled by a Bluetooth-enabled (low energy) \textit{LightBlue Bean} microcontroller with a 3-axis accelerometer [punchthrough.com/bean]. This device combines several functions, including the control of gameplay from a smartphone or tablet, visual display of user's heart rate and interesting visual and vibrational patterns for entertainment and wearer adornment value \cite{tindale2014wearable}. The gaming app involves a collections and discovery game for children aged 8-14 called \textit{Time Tremors} in which children collect game-point crystals in order to unlock treasures that they then view on the accompanying smartphone. There is also a television series that is integrated with this gameplay that provides narrative drive and structure \cite{holler2014time}. Crystals are earned by the player through simple puzzle-solving, artifact discovery and physical activities. The end result is a sensory-intensive, transmedia game intended to encourage physical fitness and cultural exploration in children. 
 %On the device vibrotactile patterns play a major part in user interaction, signalling the tempo and types of play. When children earn treasures they also get to experience new vibrotactile sensations. The method of authoring patterns in a shareable and standardized way becomes an important consideration.
@@ -75,7 +75,7 @@ A wrist-wearable vibrotactile device, or what we call a \textit{vibe bracelet}, 
 %caption{Bracelet design with 2x5 tactor array.}
 \end{center}
 \end{figure}
-\large \color{red}
+\normalsize \color{red}
 \begin{center}
 \textbf{Bracelet design with 2x5 tactor array.}
 \end{center}
@@ -102,7 +102,7 @@ A wrist-wearable vibrotactile device, or what we call a \textit{vibe bracelet}, 
 \node [textBox] (box) {
 \begin{minipage}{0.45\textwidth}
 
-\large \color{black}
+\normalsize \color{black}
 \textbf{Use cases for wrist-wearable device}
 \begin{enumerate}
   \item Interpret wrist gestures and recognize overall physical activity of the wearer (using the microcontroller's accelerometer),
@@ -137,12 +137,12 @@ It is use case no. 3 that we consider for its potential musicality and the appli
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Huge \color{red}
 \textbf{Research Problems}
-\Large \color{black}
+\normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Haptic feedback and communication}\\
-\Large \color{black}
+\normalsize \color{black}
 The largest organ of the human body is the skin and has great potential for the transmittal of information and sensation.
 
 % \cite{lindeman2006wearable} \cite{brewster2004tactons}. 
@@ -164,33 +164,33 @@ touch is useful in generating intimacy in normal social situations.
 %For example, the new Apple Watch enables wearers to communicate their heartbeat to others wirelessly.
 %\cite{marks2014pulse}.\\ 
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Wearable vibrotactile devices}\\
-\Large \color{black}
+\normalsize \color{black}
 %Typically, haptic devices beyond experimental contexts are either wearable or holdable. One challenge of wearable devices is motivating people to wear them. People tend to be very particular about the look and feel of devices that provide potentially intimate notifications. The purposes of such devices are varied and include emulation of attention-getting practices such as the squeezing of wrists, touching of shoulders and pats on arms. As Baumann notes, such social gestures may include a wealth of sub-texts including urgency, affection, control of the other and reinforcement of social hierarchies \cite{baumann2010emulating}. Due to their potential back or side-channel nature, vibrotactile devices could aid in tasks in which the user's main attention might be devoted to some other task, such as navigation, gameplay, or in situations where visual information is scarce or non-existent, as with the blind \cite{ertan1998wearable}.  Devices vary in the degree of body contact they provide. The ability of he body to perceiver vibrotactile stimuli varies greatly between regions of the body dues to variation in skin receptor density \cite{lindeman2006wearable}. Work has been also done in wide-area stimulation instead of areas of the body where receptor density is greatest, such as the tips of the fingers and lips \cite{lindeman2004towards}. Vibrational patterns suitable for a wrist device are much less complex than those designed for auditory perception due to the constrained perceptual channel of the cutaneous and kinaesthetic possibilities of the wrist compared to that of our ears.\\  
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Tactile authoring for vibrotactile devices}\\
-\Large \color{black}
+\normalsize \color{black}
 %Wearable tactile devices are increasing in popularity, especially for handsfree applications. Tools for authoring of tactile patterns for these devices makes the job much easier. Panëels, et al. describe a system for easy prototyping of tactile patterns based on a graphic representation of the shape of the device. A vibrotactile editor represents vibration pitch by vertical placement of notes, as in music notation. They describe the difficulty in designing such patterns by non-experts since it pre-supposes knowledge of music notation as well as other technical area like waveform design. Nor does the system support tactile design for multiple actuators \cite{paneels2013tactiped}. Brown examines how musical techniques can be applied to \textit{tacton} design. Tactons are structured vibrotactile messages designed to communicate information non-visually. They are the tactile counterpart of visual icons \cite{brewster2004tactons}. She examines the role of tactile dynamics and concludes that they should be combined with consideration of other vibrotactile parameters such as duration, roughness and rhythm \cite{brown2006tactile}. Gunther explores the notion of tactile composition, which he views as a novel coupling of haptics technology and music, for the purpose of creating aesthetically appealing tactile compositions. He notes the close relation between sound and touch in all musical performance. He later describes the complex psychophysics that informs the composition of spatio-temporal patterns on the skin  \cite{gunther2003cutaneous}.\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Multiple actuator devices}\\
-\Large \color{black}
+\normalsize \color{black}
 %Devices that contain several vibrotactile actuators are common in the literature\cite{gunther2003cutaneous} \cite{lindeman2004towards} \cite{lindeman2006wearable} \cite{ertan1998wearable} \cite{brown2007tactons}. These devices tend to be placed at various locations around the body, or in tiny pin arrays suitable for fingertip stimulation \cite{brewster2004tactons}. The design of tactile patterns depends on the configuration and placement of the actuators. The purpose of having multiple actuators is distribute notifications of events in places around the body that will be noticed while people do other physically or cognitively demanding activities \cite{lindeman2006wearable}, to transmit symbolic information similar to the fingertip sensing of braille \cite{brewster2004tactons}, to develop skills with polyphonic rhythms  \cite{holland2010feeling}, providing feedback for digital musical instruments \cite{marshall2006vibrotactile} \cite{schumacher2013vibrotactile}, or to create aesthetically appealing patterns for the skin \cite{gunther2003cutaneous}. A wrist-worn bracelet similar to our device is described in \cite{paneels2013tactiped}.\\
 
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Designing patterns using music notation}\\
-\Large \color{black}
+\normalsize \color{black}
 %\Huge \color{red}
 %Introduction\\
-%\Large \color{black}
+%\normalsize \color{black}
 %This research employs the text-based music engraving and compositional tool Lilypond \cite{nienhuys2003lilypond}. The application Frescobaldi [http://frescobaldi.org] was used as a front-end to Lilypond. Writing music using Lilypond is a similar process to writing papers using the document preparation system LaTex. Like LaTex, its textual input can be easily version-controlled. The output of Lilypond follows music notation conventions and is of high quality. Once learned to a rudimentary level Lilypond is a useful tool for experimenting with music notation and can easily output MIDI code. This MIDI is used to drive the actuator array in the vibrotactile bracelet using the standard Arduino MIDI library. The complete workflow is to first compose music in Frescobaldi/Lilypond, output a MIDI file from the Lilypond source, import this MIDI file into a track in Ableton Live, send a MIDI stream out from Ableton into a dedicated USB MIDI cable and then read this MIDI data in Arduino, using MIDI-read() function. The workflow proved to be quite workable as an experimental technique.\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Basic mapping conventions}\\
-\Large \color{black}
+\normalsize \color{black}
 Our notational approach for our wrist-wearable device is to follow music notation conventions and to see where these conventions lead us in the domain of vibrotactile devices:
 
 \begin{itemize}
@@ -212,7 +212,7 @@ We also need to translate the nomenclature from the domain of wrist wearables to
 \begin{minipage}{0.45\textwidth}
     
 \begin{table}[H]
-\large \color{black}\sffamily
+\normalsize \color{black}\sffamily
 %\caption{Vibrotactile vs Music notation terms}
 \normalsize
 %\centering
@@ -237,24 +237,24 @@ Integrated series of activations & Composition \\
 
 %Therefore, the basic components of music are present even with a wrist-wearable vibrotactile device that does not, at first, seem to have a musical aspect: \textit{notes} with durations, pitched notes played on various discrete \textit{instruments} (vibe motors and LED lights), various \textit{parts,} or \textit{voices,} played in polyphonic \textit{compositions} and the dynamics of various parts playing together. \\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Pitch}\\
-\Large \color{black}
+\normalsize \color{black}
 %Vertical placement for normal, pitched notes in music notation indicates their pitch. Pitch differentials are possible with tactors, as their frequency can be modelled using standard pulse-width modulation (PWM) techniques \cite{lindeman2006wearable}. The pitch of a note is one of its primary psychoacoustic attributes, along with its duration, loudness and timbre. Unpitched notes are those for which the frequency is indeterminate, too complex or unrelated to the pitch contours of melodic or harmonic parts. The perception of pitch in vibrotactile devices differs from that of normal acoustic instruments. The number of frequency differences is much reduced and depends on amplitude. The skin's maximal frequency response occurs around 250 Hz \cite{gunther2003cutaneous}. There may be as few as five frequency distinctions possible with cutaneous perception, or as many as ten \cite{van2003distilling}.  So, the chromatic range of pitches and frequencies over many octaves as normally represented using music notation is not suitable for cutaneous perception, it appears that some, relatively minor variation in pitch is possible. These considerations would seem not to preclude the use of music notation for our purposes -- the use of notes to represent non-aural sensory expression.\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Intensity}\\
-\Large \color{black}
+\normalsize \color{black}
 %The intensity of a vibrotactile stimulus is defined by the strength or magnitude of its vibration. As with aural music, suitable intensities for vibrotactile devices range from those that are barely perceptual to those that become uncomfortable. Classic work in this area was done by measuring Weber fractions and just noticeable differences (JNDs). Frequency and intensity parameters interact in vibrotactile studies in that differences can be ascribed to combinations of parameters \cite{van2003distilling}. The intensity threshold is adaptable and depends on a variety of parameters such as actuator used, location of the stimulation, person, or frequency of the vibration \cite{jonas2008tactile}. Geldard discovered that while we can discriminate 15 levels of vibrotactile stimuli intensity but that no more than three intensity levels can be identified absolutely \cite{geldard1960some}. Considerations of the amplitude envelope (amplitude, delay, sustain, release, or ADSR) and with amplitude modulations such as tremolo or pitch modulations like vibrato  are also important with vibrotactile stimulation \cite{gunther2003cutaneous}.\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Duration}\\
-\Large \color{black}
+\normalsize \color{black}
 %The term duration refers to the length of the tactile stimulus -- from onset to the termination of the stimulus. There exist various reference values for duration and is generally measured in milliseconds \cite{jonas2008tactile}. It is important to ensure that the individual vibrotactile stimuli are within a reasonable range of durations. Geldard found that stimuli duration roughly between 0.1 and two seconds is reasonable \cite{geldard1960some}. If vibrotactile notes are of short duration they are perceived as sharp taps or jabs in the skin \cite{gunther2003cutaneous}, while stimuli that lasted longer than the upper limit of two seconds delays communication \cite{jonas2008tactile}. Dynamic properties of a vibration signal such as its envelope, duration, and the presence of masking stimuli may also affect perceptual threshold levels \cite{birnbaum2007musical}.\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Spatial patterns and vibrotactile clues}\\
-\Large \color{black}
+\normalsize \color{black}
 %As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: \textit{Go this way / don't go that way}, and 
 %\textit{You're getting warmer / you're getting colder}. These are spatial and metaphorical in nature and allude to navigating through some kind of virtual space. Panëels discusses vibrotactile design for metaphorical patterns such as \textit{turn back} on devices that have actuators with spatial patterns, but does it in a non-musical context \cite{paneels2013tactiped}. Ideally these gameplay clues are either self-explanatory or easy for the player to learn. A vibrotactile device having a series of tactors activating in the intended direction might be a good first step in suggesting \textit{go this way}, much like a flashing series of traffic lights scrolling to the right suggest proceed to the right (Figure ~\ref{fig:tactorArray}). To test such intuitions requires additional study. One should also note that wrist-worn devices can be oriented in various ways, depending on wrist position.\\
 
@@ -367,12 +367,12 @@ Integrated series of activations & Composition \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Huge \color{red}
 \textbf{Controlling Components\\ using Musical Notation\\}
-\Large \color{black}
+\normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\LARGE \color{red}
+\normalsize \color{red}
 %\textbf{Music with one spatial dimension (1D = linear)}\\
-\Large \color{black}
+\normalsize \color{black}
 %Following this line of reasoning, music with one spatial dimension is that which instruments follow some kind of spatial linear progression along one line, such as pan or a sweep. Figure ~\ref{fig:arrowsMoving00}. shows one vibe motor activating in a simple rhythm with a simple, rhythmic pitch change. 
 %By the conventions of music notation it is clear that a regular rhythm is being represented. Of course, to appreciate this requires at least a rudimentary knowledge of music notation. To design a pattern of similar rhythmic complexity by means other than music notation would likely be more difficult. \\
 
@@ -382,41 +382,52 @@ Integrated series of activations & Composition \\
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
-\color{red} \textbf{Device with no spatial dimension (0D = point)}\\
+\Large \color{red} \textbf{Device with no spatial dimension (0D = point)}\\
+\textbf{Vertical note position maps to single component}\\
+\normalsize
 \color{black}
 \vspace{2cm}
 %top diagram
 \begin{tikzpicture}[scale=2]
 %grid
 \draw[step=1cm,gray,very thin] (0,0) grid (1,1);
-%bottom row:
+%circles:
 \filldraw[fill=blue, draw=black] (0.5,0.5) circle (0.12cm);
+%\draw[very thin] (0.5,0.5) circle (0.2cm);
+%\draw[very thin] (0.5,0.5) circle (0.35cm);
+
 \end{tikzpicture}\\
 \textbf{Device with a single vibe motor}
 \vspace{1cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=\textwidth]{graphicsPoster/arrowsMoving-00.pdf}
+        \includegraphics[width=0.65\textwidth]{graphicsPoster/arrowsMoving-00.pdf}
 \end{figure}
-\textbf{Score for single vibe motor playing simple solo rhythm}
+\textbf{Score for single vibe motor playing a simple solo rhythm}\\
 \begin{itemize}
-\item Time = horizontal, x-axis
-\item Pitch = vertical, y-axis; single pitch for single component
-\item Unpitched notation also suitable
-\item Notation affects only one component
+\item Specifies activation for a single component
+\item Time = horizontal axis. Horizontal, or rhythmic information as per standard musical notation
+\item Vertical position does not vary (therefore, unpitched notation would also be suitable)
+\item For most vibe motors pitch remains constant, but intensity can vary
+\item Intensity specified by dynamics markings
+\item Information is not very dense (single line score would suffice)
+\item \textbf{NEXT STEP} notate for multiple vibe motors
 \end{itemize}
 \end{center}
 \end{minipage}};
 \end{tikzpicture}
 \end{center}
 
-%ONE DIM
+%ONE DIM, unpitched
 \begin{center}
 \begin{tikzpicture}
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
+\Large 
 \color{red} \textbf{Device with one spatial dimension (1D = linear)}\\
+\textbf{Vertical note position maps to five components}\\
+\normalsize
 \color{black}
 \vspace{2cm}
 %top diagram
@@ -434,21 +445,41 @@ Integrated series of activations & Composition \\
 \vspace{2cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=0.9\textwidth]{graphicsPoster/arrowsMoving-5-4.pdf}
+        \includegraphics[width=0.85\textwidth]{graphicsPoster/arrowsMoving-00-drumStaff.pdf}
 \end{figure}
-\textbf{Score for a linear array of vibe motors}
+\textbf{Score for a linear array of five vibe motors}
 \begin{itemize}
-\item Time = horizontal, x-axis (rests are hidden)
-\item Vertical staff position (EGBDF) = vibe motor address
-\item Vertical position no longer signifies pitch
-\item Separate part for each vibe motor
-\item Each component is independently addressable through notation
-\item Accents and other articulations possible
+\item Specifies activations for five, independent components
+\item Time = horizontal axis
+\item Notation is for unpitched components and has five lines
+\item Each part occupies one staff line (rests are hidden)
+\item Vertical staff position specifies vibe motor to activate; top line=1, second line=2, etc.
+\item MIDI number for note $\Rightarrow$ vibe motor address
+\item \textbf{PROBLEM} Putting five parts on one staff is hard to read 
+\item \textbf{NEXT STEP} Make notation less dense and more readable
 \end{itemize}
+
+%ONE DIM, low density
+\begin{center}
+\vspace{2cm}
+%bottom figure (musical staff)
+\begin{figure}[H]
+        \includegraphics[width=0.65\textwidth, height=.35\textwidth]{graphicsPoster/arrowsMoving-01-drumStaves.pdf}
+\end{figure}
+\textbf{Score for a linear array of five vibe motors}
+\begin{itemize}
+\item Specifies activations for five, independent components
+\item Time = horizontal axis
+\item Five staff rhythmic notation 
+\item MIDI number derived from staff $\Rightarrow$ vibe motor address
+\item \textbf{NEXT STEP} Make notation suitable for two dimensional arrays of vibe motors
+\end{itemize}
+\end{center}
 \end{center}
 \end{minipage}};
 \end{tikzpicture}
 \end{center}
+
 
 %TWO DIM
 \begin{center}
@@ -456,7 +487,9 @@ Integrated series of activations & Composition \\
 \node [figureBox] (box){ % or figureBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
+\Large
 \color{red} \textbf{Device with two spatial dimension (2D = planar)}\\
+\normalsize
 \color{black}
 \vspace{2cm}
 %top diagram
@@ -475,8 +508,9 @@ Integrated series of activations & Composition \\
 \filldraw[fill=white, draw=black] (2.5,0.5) circle (0.12cm);
 \filldraw[fill=blue, draw=black] (3.5,0.5) circle (0.12cm);
 \filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
-
 \end{tikzpicture}\\
+
+
 \textbf{Device with an array of vibe motors}
 \vspace{2cm}
 %bottom figure (musical staff)
@@ -528,20 +562,20 @@ Integrated series of activations & Composition \\
 
 %Figure ~\ref{fig:arrowsMoving01}. shows three vibe motors activating in a sequential motion. The motors are arranged along a line and therefore are only one dimensional. Since they are playing the same pitch if the three separate parts where placed on the same staff there would be confusion about which note applies to which motor. Because of their linear placement their pulsation has a directionality. However, this directionality is less apparent in the notation itself. The only indication that Vibe 02 might be located after Vibe 01 is because of the numbering of the score. Yet with vibe bracelets it is desirable to be able to represent two dimensions such that common 2D patterns such as moving sprites, radiating waves and the like can be created across the skin. Is it possible to easily represent the activation of a 2D array of instruments using standard music notation?\\
 
-\LARGE \color{red}
+\normalsize \color{red}
 \textbf{Music with additional spatial dimensions (2D = planar)}\\
-\Large \color{black}
+\normalsize \color{black}
 %With pitched notation the pitch, timing and rhythm of the music tends to be its most important aspect. Time occupies the \textit{x} dimension while pitch occupies the \textit{y}. The spatial placement of the instruments playing different parts is less of a concern. You can have many \textit{parts}, or stack notes in \textit{chords} but this seems only to provide you with one additional dimension. With variables outside of standard notation, such as those that can be accessed though midi channels, additional mappable dimensions may be possible but then this becomes similar to using other programming techniques in which dimensions of information are represented using, for instance, multi-dimensional arrays. The clear graphic presentation of standard music notation, which could be so useful in depicting complex music patterns, would then be lost.\\
 
-%\LARGE \color{red}
+%\normalsize \color{red}
 %Future Work\\
-%\Large \color{black}
+%\normalsize \color{black}
 %Our work consists of quick iteration of devices and authoring of activation patterns for several devices. This work is motivated by both research and aesthetic considerations. Pattern authoring depends crucially on the nature of the device being authored for and its purpose. We consider two aspects that seem particularly promising for future development in this area: the design of vibrotactile patterns to enhance and inform transmedia narratives, and the creation of aesthetically appealing vibrotactile patterns in a variety of musical \textit{genres}. We are also interested in ways of packing more information into standard music notation since it provides a means of representing complex patterns of activation in an elegant form.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Huge \color{red}
 \textbf{Conclusion}
-\Large \color{black}
+\normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Music notation is a finely structured notational system. It requires an expert-level of competence to read its finest levels of detail, however, this type of expertise is not hard to find in cultures where notated musical composition and performance is well-established. What is much less common is cross-expertise in both music notation and vibrotactile technologies. Designing interesting and functionally useful patterns for vibrotactile devices is obviously a new field. Standard musical notation includes many dimensions but in its standard forms does not easily lend itself to inclusion of additional non-musical dimensions such as required for the specification of 2 and 3D spatial patterns. These sorts of patterns are important to represent for vibrotactile devices.\\

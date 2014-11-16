@@ -27,7 +27,7 @@
 % AUTHORS
 \begin{figure}[H]
     %\begin{center}
-        \includegraphics[width=0.15\textwidth]{graphics/OCAD_Logo.png}
+        \includegraphics[width=0.12\textwidth]{graphics/OCAD_Logo.png}
     %\end{center}
     %\caption{\label{fig:arrowsMoving00}}
 \end{figure}
@@ -50,7 +50,7 @@ Wrist-wearable vibrotactile arrays can serve many functions: typically they are 
 ]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge \color{red}
+\LARGE \color{red}
 \textbf{Introduction}\\
 \normalsize \color{black}
 We are developing a MIDI-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors and buttons that activate when vibe motors are touched. 
@@ -135,7 +135,7 @@ It is use case no. 3 that we consider for its potential musicality and the appli
 %Concepts and entities expressed using standard musical notation such as notes, note durations, parts and instruments need to translated, or mapped, from the music domain to that of vibrotactile devices. This mapping has proven to be useful and appears to lead to interesting possibilities for pattern design for these devices.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge \color{red}
+\Large \color{red}
 \textbf{Research Problems}
 \normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,7 +183,7 @@ touch is useful in generating intimacy in normal social situations.
 \normalsize \color{red}
 \textbf{Designing patterns using music notation}\\
 \normalsize \color{black}
-%\Huge \color{red}
+%\Large \color{red}
 %Introduction\\
 %\normalsize \color{black}
 %This research employs the text-based music engraving and compositional tool Lilypond \cite{nienhuys2003lilypond}. The application Frescobaldi [http://frescobaldi.org] was used as a front-end to Lilypond. Writing music using Lilypond is a similar process to writing papers using the document preparation system LaTex. Like LaTex, its textual input can be easily version-controlled. The output of Lilypond follows music notation conventions and is of high quality. Once learned to a rudimentary level Lilypond is a useful tool for experimenting with music notation and can easily output MIDI code. This MIDI is used to drive the actuator array in the vibrotactile bracelet using the standard Arduino MIDI library. The complete workflow is to first compose music in Frescobaldi/Lilypond, output a MIDI file from the Lilypond source, import this MIDI file into a track in Ableton Live, send a MIDI stream out from Ableton into a dedicated USB MIDI cable and then read this MIDI data in Arduino, using MIDI-read() function. The workflow proved to be quite workable as an experimental technique.\\
@@ -238,22 +238,22 @@ Integrated series of activations & Composition \\
 %Therefore, the basic components of music are present even with a wrist-wearable vibrotactile device that does not, at first, seem to have a musical aspect: \textit{notes} with durations, pitched notes played on various discrete \textit{instruments} (vibe motors and LED lights), various \textit{parts,} or \textit{voices,} played in polyphonic \textit{compositions} and the dynamics of various parts playing together. \\
 
 \normalsize \color{red}
-\textbf{Pitch}\\
+\textbf{Pitch}
 \normalsize \color{black}
 %Vertical placement for normal, pitched notes in music notation indicates their pitch. Pitch differentials are possible with tactors, as their frequency can be modelled using standard pulse-width modulation (PWM) techniques \cite{lindeman2006wearable}. The pitch of a note is one of its primary psychoacoustic attributes, along with its duration, loudness and timbre. Unpitched notes are those for which the frequency is indeterminate, too complex or unrelated to the pitch contours of melodic or harmonic parts. The perception of pitch in vibrotactile devices differs from that of normal acoustic instruments. The number of frequency differences is much reduced and depends on amplitude. The skin's maximal frequency response occurs around 250 Hz \cite{gunther2003cutaneous}. There may be as few as five frequency distinctions possible with cutaneous perception, or as many as ten \cite{van2003distilling}.  So, the chromatic range of pitches and frequencies over many octaves as normally represented using music notation is not suitable for cutaneous perception, it appears that some, relatively minor variation in pitch is possible. These considerations would seem not to preclude the use of music notation for our purposes -- the use of notes to represent non-aural sensory expression.\\
 
 \normalsize \color{red}
-\textbf{Intensity}\\
+\textbf{Intensity}
 \normalsize \color{black}
 %The intensity of a vibrotactile stimulus is defined by the strength or magnitude of its vibration. As with aural music, suitable intensities for vibrotactile devices range from those that are barely perceptual to those that become uncomfortable. Classic work in this area was done by measuring Weber fractions and just noticeable differences (JNDs). Frequency and intensity parameters interact in vibrotactile studies in that differences can be ascribed to combinations of parameters \cite{van2003distilling}. The intensity threshold is adaptable and depends on a variety of parameters such as actuator used, location of the stimulation, person, or frequency of the vibration \cite{jonas2008tactile}. Geldard discovered that while we can discriminate 15 levels of vibrotactile stimuli intensity but that no more than three intensity levels can be identified absolutely \cite{geldard1960some}. Considerations of the amplitude envelope (amplitude, delay, sustain, release, or ADSR) and with amplitude modulations such as tremolo or pitch modulations like vibrato  are also important with vibrotactile stimulation \cite{gunther2003cutaneous}.\\
 
 \normalsize \color{red}
-\textbf{Duration}\\
+\textbf{Duration}
 \normalsize \color{black}
 %The term duration refers to the length of the tactile stimulus -- from onset to the termination of the stimulus. There exist various reference values for duration and is generally measured in milliseconds \cite{jonas2008tactile}. It is important to ensure that the individual vibrotactile stimuli are within a reasonable range of durations. Geldard found that stimuli duration roughly between 0.1 and two seconds is reasonable \cite{geldard1960some}. If vibrotactile notes are of short duration they are perceived as sharp taps or jabs in the skin \cite{gunther2003cutaneous}, while stimuli that lasted longer than the upper limit of two seconds delays communication \cite{jonas2008tactile}. Dynamic properties of a vibration signal such as its envelope, duration, and the presence of masking stimuli may also affect perceptual threshold levels \cite{birnbaum2007musical}.\\
 
 \normalsize \color{red}
-\textbf{Spatial patterns and vibrotactile clues}\\
+\textbf{Spatial patterns and vibrotactile clues}
 \normalsize \color{black}
 %As noted above one of the primary use cases for our vibrotactile device is offer vibrotactile clues about where crystals and treasures can be found within transmedia-inspired gameplay. These clues are intended to provide the following messages to the game-player: \textit{Go this way / don't go that way}, and 
 %\textit{You're getting warmer / you're getting colder}. These are spatial and metaphorical in nature and allude to navigating through some kind of virtual space. Panëels discusses vibrotactile design for metaphorical patterns such as \textit{turn back} on devices that have actuators with spatial patterns, but does it in a non-musical context \cite{paneels2013tactiped}. Ideally these gameplay clues are either self-explanatory or easy for the player to learn. A vibrotactile device having a series of tactors activating in the intended direction might be a good first step in suggesting \textit{go this way}, much like a flashing series of traffic lights scrolling to the right suggest proceed to the right (Figure ~\ref{fig:tactorArray}). To test such intuitions requires additional study. One should also note that wrist-worn devices can be oriented in various ways, depending on wrist position.\\
@@ -261,48 +261,46 @@ Integrated series of activations & Composition \\
 %Music as it is commonly notated does not lend itself to these sorts of concepts or metaphors. Although music that has spatial aspects is common, such as the surround sound of Thomas Tallis' \textit{Spem in Alium} [1570], or the call and response of antiphonal works, standard music notation tends not to focus on the specification of spatial aspects in music performance -- even though aural perception is intensely spatial. In ensembles, sections of instruments playing the same parts are usually placed together but this is a performance convention and is usually outside of the notation itself. Therefore, it is unclear at first what notated music that could be interpreted as \textit{go this way}, or \textit{you're getting warmer} might look like.\\
 
 
-\begin{figure}[H]
-\definecolor{light-gray}{gray}{0.85}
-\definecolor{med-gray}{gray}{0.65}
-\definecolor{dark-gray}{gray}{0.35}
-  	
-	%\begin{tikzpicture}[scale=2.0]
-	\begin{center}
-	\begin{tikzpicture}[scale=2]
-	%arrow on top:
-	\draw[thick,->, line width=2pt] (0.5,2.5) -- (4.5,2.5);
-	%curved arrows:
-	%\draw[thick,->,>=angle 90, line width=2pt, shorten >=10pt, shorten <=10pt] 
-		%(4.5,1.5) .. controls (9,3) and (-4,3) .. (0.5,1.5);
-	%\draw[thick,->,>=angle 90, line width=2pt, shorten >=10pt, shorten <=10pt] 
-		%(4.5,0.5) .. controls (9,-1) and (-4,-1) .. (0.5,0.5);
-	%grid:
-	\draw[step=1cm,gray,very thin] (0,0) grid (5,2);
-	%bottom row:
-	\filldraw[fill=dark-gray, draw=black] (0.5,0.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (1.5,0.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (2.5,0.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (3.5,0.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
-	%top row:
-	\filldraw[fill=dark-gray, draw=black] (0.5,1.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (1.5,1.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (2.5,1.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (3.5,1.5) circle (0.12cm);
-	\filldraw[fill=white, draw=black] (4.5,1.5) circle (0.12cm);
+%\begin{figure}[H]
+%\definecolor{light-gray}{gray}{0.85}
+%\definecolor{med-gray}{gray}{0.65}
+%\definecolor{dark-gray}{gray}{0.35}
+%  	
+%	%\begin{tikzpicture}[scale=2.0]
+%	\begin{center}
+%	\begin{tikzpicture}[scale=2]
+%	%arrow on top:
+%	\draw[thick,->, line width=2pt] (0.5,2.5) -- (4.5,2.5);
+%	%curved arrows:
+%	%\draw[thick,->,>=angle 90, line width=2pt, shorten >=10pt, shorten <=10pt] 
+%		%(4.5,1.5) .. controls (9,3) and (-4,3) .. (0.5,1.5);
+%	%\draw[thick,->,>=angle 90, line width=2pt, shorten >=10pt, shorten <=10pt] 
+%		%(4.5,0.5) .. controls (9,-1) and (-4,-1) .. (0.5,0.5);
+%	%grid:
+%	\draw[step=1cm,gray,very thin] (0,0) grid (5,2);
+%	%bottom row:
+%	\filldraw[fill=dark-gray, draw=black] (0.5,0.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (1.5,0.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (2.5,0.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (3.5,0.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
+%	%top row:
+%	\filldraw[fill=dark-gray, draw=black] (0.5,1.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (1.5,1.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (2.5,1.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (3.5,1.5) circle (0.12cm);
+%	\filldraw[fill=white, draw=black] (4.5,1.5) circle (0.12cm);
+%
+%	\end{tikzpicture}
+%  	%\caption{2x5 array of tactors with directional activation.}
+%  	\label{fig:tactorArray}
+%
+%\end{figure}
+%\textbf{2x5 array of tactors with directional activation.}
+%\end{center}
 
-	\end{tikzpicture}
-	\end{center}
-  	%\caption{2x5 array of tactors with directional activation.}
-  	\label{fig:tactorArray}
-
-\end{figure}
-\begin{center}
-\textbf{2x5 array of tactors with directional activation.}
-\end{center}
-
-\bigskip
-\bigskip
+%\bigskip
+%\bigskip
 
 %vvvvvvvvv%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %http://tex.stackexchange.com/questions/18363/diagrams-package-that-allows-to-draw-computer-buffers-memory-diagrams
@@ -326,18 +324,18 @@ Integrated series of activations & Composition \\
 %\textbf{Circular array 1}
 %\end{center}
 
-\begin{center}
-\begin{tikzpicture}
-\draw [thick] (0,0) circle (4);
-\draw [thick] (0,0) circle (5);
-\foreach \angle in {0,60,...,300}
-	\draw [thick, fill=black, rotate=\angle, shift={(5, 0)}] (0,0) circle (0.25);
-\foreach \angle in {0,60,...,300}
-	\draw [thick, fill=black, rotate=\angle, shift={(4, 0)}] (0,0) circle (0.25);
-\end{tikzpicture}
-\par
-\textbf{Circular array of tactors.}
-\end{center}
+%\begin{center}
+%\begin{tikzpicture}
+%\draw [thick] (0,0) circle (4);
+%\draw [thick] (0,0) circle (5);
+%\foreach \angle in {0,60,...,300}
+%	\draw [thick, fill=black, rotate=\angle, shift={(5, 0)}] (0,0) circle (0.25);
+%\foreach \angle in {0,60,...,300}
+%	\draw [thick, fill=black, rotate=\angle, shift={(4, 0)}] (0,0) circle (0.25);
+%\end{tikzpicture}
+%\par
+%\textbf{Circular array of tactors.}
+%\end{center}
 
 \bigskip
 \bigskip
@@ -345,28 +343,28 @@ Integrated series of activations & Composition \\
 
 \par
 \bigskip
-\begin{center}
-\begin{tikzpicture}[>=latex,font=\sffamily,every node/.style={minimum width=2cm, minimum height=2cm, outer sep=0pt, draw=black, thick}]
-        \node at (0,0) (A) {1};
-        \node [anchor=west] at (A.east) (B) {2};
-        %\draw [anchor=west] at (A.east) circle (0.25);
-        \node [anchor=west] at (B.east) (C) {3};
-        \node [anchor=west] at (C.east) (D) {4};
-        \node [anchor=west] at (D.east) (E) {5};
-        \node [anchor=west] at (E.east) (F) {6};
-        \draw [thick,->,>=angle 90, line width=2pt, shorten >=5pt, shorten <=5pt] 			(F.south) -- +(0,-1em) -| (A);
-\end{tikzpicture}
-\par
-\textbf{Linear array of tactors.}
-\end{center}
-\bigskip
-\bigskip
+%\begin{center}
+%\begin{tikzpicture}[>=latex,font=\sffamily,every node/.style={minimum width=2cm, minimum height=2cm, outer sep=0pt, draw=black, thick}]
+%        \node at (0,0) (A) {1};
+%        \node [anchor=west] at (A.east) (B) {2};
+%        %\draw [anchor=west] at (A.east) circle (0.25);
+%        \node [anchor=west] at (B.east) (C) {3};
+%        \node [anchor=west] at (C.east) (D) {4};
+%        \node [anchor=west] at (D.east) (E) {5};
+%        \node [anchor=west] at (E.east) (F) {6};
+%        \draw [thick,->,>=angle 90, line width=2pt, shorten >=5pt, shorten <=5pt] 			(F.south) -- +(0,-1em) -| (A);
+%\end{tikzpicture}
+%\par
+%\textbf{Linear array of tactors.}
+%\end{center}
+%\bigskip
+%\bigskip
 %^^^^^^^^^%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge \color{red}
-\textbf{Controlling Components\\ using Musical Notation\\}
+\Large \color{red}
+\textbf{Controlling Components using Musical Notation}
 \normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -379,7 +377,7 @@ Integrated series of activations & Composition \\
 %ZERO DIM
 \begin{center}
 \begin{tikzpicture}
-\node [figureBox] (box){ % or figureBox
+\node [figureBox] (box){ % or textBox
 \begin{minipage}{0.45\textwidth}
 \begin{center}
 \Large \color{red} \textbf{Device with no spatial dimension (0D = point)}\\
@@ -388,6 +386,7 @@ Integrated series of activations & Composition \\
 \color{black}
 \vspace{2cm}
 %top diagram
+
 \begin{tikzpicture}[scale=2]
 %grid
 \draw[step=1cm,gray,very thin] (0,0) grid (1,1);
@@ -395,15 +394,18 @@ Integrated series of activations & Composition \\
 \filldraw[fill=blue, draw=black] (0.5,0.5) circle (0.12cm);
 %\draw[very thin] (0.5,0.5) circle (0.2cm);
 %\draw[very thin] (0.5,0.5) circle (0.35cm);
-
 \end{tikzpicture}\\
 \textbf{Device with a single vibe motor}
+\end{center}
+
 \vspace{1cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
         \includegraphics[width=0.65\textwidth]{graphicsPoster/arrowsMoving-00.pdf}
 \end{figure}
 \textbf{Score for single vibe motor playing a simple solo rhythm}\\
+
+
 \begin{itemize}
 \item Specifies activation for a single component
 \item Time = horizontal axis. Horizontal, or rhythmic information as per standard musical notation
@@ -413,16 +415,9 @@ Integrated series of activations & Composition \\
 \item Information is not very dense (single line score would suffice)
 \item \textbf{NEXT STEP} notate for multiple vibe motors
 \end{itemize}
-\end{center}
-\end{minipage}};
-\end{tikzpicture}
-\end{center}
+\rule{\textwidth}{0.5pt}\\
 
 %ONE DIM, unpitched
-\begin{center}
-\begin{tikzpicture}
-\node [figureBox] (box){ % or figureBox
-\begin{minipage}{0.45\textwidth}
 \begin{center}
 \Large 
 \color{red} \textbf{Device with one spatial dimension (1D = linear)}\\
@@ -448,6 +443,8 @@ Integrated series of activations & Composition \\
         \includegraphics[width=0.85\textwidth]{graphicsPoster/arrowsMoving-00-drumStaff.pdf}
 \end{figure}
 \textbf{Score for a linear array of five vibe motors}
+\end{center}
+
 \begin{itemize}
 \item Specifies activations for five, independent components
 \item Time = horizontal axis
@@ -458,13 +455,12 @@ Integrated series of activations & Composition \\
 \item \textbf{PROBLEM} Putting five parts on one staff is hard to read 
 \item \textbf{NEXT STEP} Make notation less dense and more readable
 \end{itemize}
+\rule{\textwidth}{0.5pt}\\
 
 %ONE DIM, low density
-\begin{center}
-\vspace{2cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=0.65\textwidth, height=.35\textwidth]{graphicsPoster/arrowsMoving-01-drumStaves.pdf}
+        \includegraphics[width=0.55\textwidth, height=.35\textwidth]{graphicsPoster/arrowsMoving-01-drumStaves.pdf}
 \end{figure}
 \textbf{Score for a linear array of five vibe motors}
 \begin{itemize}
@@ -474,24 +470,16 @@ Integrated series of activations & Composition \\
 \item MIDI number derived from staff $\Rightarrow$ vibe motor address
 \item \textbf{NEXT STEP} Make notation suitable for two dimensional arrays of vibe motors
 \end{itemize}
-\end{center}
-\end{center}
-\end{minipage}};
-\end{tikzpicture}
-\end{center}
-
+\rule{\textwidth}{0.5pt}\\
 
 %TWO DIM
-\begin{center}
-\begin{tikzpicture}
-\node [figureBox] (box){ % or figureBox
-\begin{minipage}{0.45\textwidth}
 \begin{center}
 \Large
 \color{red} \textbf{Device with two spatial dimension (2D = planar)}\\
 \normalsize
 \color{black}
 \vspace{2cm}
+
 %top diagram
 \begin{tikzpicture}[scale=2]
 %grid
@@ -508,16 +496,17 @@ Integrated series of activations & Composition \\
 \filldraw[fill=white, draw=black] (2.5,0.5) circle (0.12cm);
 \filldraw[fill=blue, draw=black] (3.5,0.5) circle (0.12cm);
 \filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
-\end{tikzpicture}\\
-
+\end{tikzpicture}
 
 \textbf{Device with an array of vibe motors}
 \vspace{2cm}
 %bottom figure (musical staff)
 \begin{figure}[H]
-        \includegraphics[width=0.75\textwidth]{graphics/arrowsMoving-01.pdf}
+        \includegraphics[width=0.55\textwidth]{graphics/arrowsMoving-01.pdf}
 \end{figure}
 \textbf{Score for an array of vibe motors}
+\end{center}
+
 \begin{itemize}
 \item Time = horizontal, x-axis (rests are hidden)
 \item Vertical staff position (EGBDF) = vibe motor address
@@ -526,11 +515,9 @@ Integrated series of activations & Composition \\
 \item Each component is independently addressable through notation
 \item Accents and other articulations possible
 \end{itemize}
-\end{center}
 \end{minipage}};
 \end{tikzpicture}
 \end{center}
-
 
 %\begin{figure}[htb]
 %    \begin{center}
@@ -573,7 +560,7 @@ Integrated series of activations & Composition \\
 %Our work consists of quick iteration of devices and authoring of activation patterns for several devices. This work is motivated by both research and aesthetic considerations. Pattern authoring depends crucially on the nature of the device being authored for and its purpose. We consider two aspects that seem particularly promising for future development in this area: the design of vibrotactile patterns to enhance and inform transmedia narratives, and the creation of aesthetically appealing vibrotactile patterns in a variety of musical \textit{genres}. We are also interested in ways of packing more information into standard music notation since it provides a means of representing complex patterns of activation in an elegant form.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge \color{red}
+\Large \color{red}
 \textbf{Conclusion}
 \normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -581,25 +568,19 @@ Integrated series of activations & Composition \\
 %Music notation is a finely structured notational system. It requires an expert-level of competence to read its finest levels of detail, however, this type of expertise is not hard to find in cultures where notated musical composition and performance is well-established. What is much less common is cross-expertise in both music notation and vibrotactile technologies. Designing interesting and functionally useful patterns for vibrotactile devices is obviously a new field. Standard musical notation includes many dimensions but in its standard forms does not easily lend itself to inclusion of additional non-musical dimensions such as required for the specification of 2 and 3D spatial patterns. These sorts of patterns are important to represent for vibrotactile devices.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Huge \color{red}
+\Large \color{red}
 \textbf{Acknowledgements}
 \normalsize \color{black}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This work has been supported by the International Science and Technology Partnerships Canada Inc (ISTP) on the project Multi-platform Game Distribution System for Popular and Experimental Technologies (MGDS-PET) and by grants from the National Sciences and Engineering Research Council of Canada (NSERC). We would also like to thank Xenophile Media Inc., Vicki Clough, Shin-you Hou, Tegan Power, Ryan Maksymic, Takis Zourntos for the their help in the development of this project.\\
 
-\begin{figure}[H]
-    %\begin{center}
-        \includegraphics[width=0.2\textwidth]{graphics/ISTP_logo.png}
-    %\end{center}
-    %\caption{\label{fig:arrowsMoving00}}
+\begin{figure}%[H]
+\includegraphics[width=0.1\textwidth]{graphics/ISTP_logo.png}
 \end{figure}
 
-\begin{figure}[H]
-    %\begin{center}
-        \includegraphics[width=0.2\textwidth]{graphics/nserc_logo_color.png}
-    %\end{center}
-    %\caption{\label{fig:arrowsMoving00}}
+\begin{figure}%[H]
+\includegraphics[width=0.1\textwidth]{graphics/nserc_logo_color.png}
 \end{figure}
 
 %% REFERENCES

@@ -8,13 +8,15 @@
 \usepackage[parfill]{parskip}  %avoid indenting first line of paragraph
 \usepackage{enumitem} 
 \setlist[enumerate]{itemsep=0mm}
+\usepackage{lettrine}
+\usepackage{type1cm} % scalable fonts
  
 \begin{document}
 \bibliographystyle{CIM14}
 
 %FONTS USED
 \newcommand{\TITLE}{\VeryHuge \color{red}\sffamily}
-\newcommand{\SECTION}{\huge \color{red}\sffamily}
+\newcommand{\SECTION}{\LARGE \color{red}\sffamily}
 \newcommand{\BIG}{\Large \color{black}\sffamily}
 \newcommand{\BIGRED}{\Large \color{red}\sffamily}
 \newcommand{\NORMAL}{\large \color{black}\sffamily}
@@ -25,10 +27,17 @@
 %Then you can just use \newCommandName{} in the text
 %eg. \NORMAL{}
 
+%tikstyles (used by several figures)
+%%%%%%%%%%%%%%%%%%%%
+\tikzstyle{figureBox} = [fill=white!20, draw=black, thick,
+    rectangle, rounded corners=10pt,inner sep=1cm, inner ysep=1cm]
+\tikzstyle{textBox} = [fill=orange!20, draw=black, thick,
+    rectangle, rounded corners=10pt, inner sep=1cm, inner ysep=1cm]
+
 \begin{center}
 \TITLE{}
 \textbf{Haptic pattern representation using\\music technologies}\\
-\vspace{1em}
+\vspace{2em}
 \end{center}
 
 \setlength{\columnsep}{2cm}
@@ -37,68 +46,99 @@
 \begin{center}
 \BIG{}
 \textbf{Michael Cumming, Adam Tindale, Sara Diamond\\
-OCAD University, Toronto, Ontario, Canada}\\
+OCAD University, Toronto, Canada}\\
 mcumming@ocadu.ca,
 atindale@faculty.ocadu.ca,
-sdiamond@ocadu.ca
+sdiamond@ocadu.ca\\
+\end{center}
+\vspace{1em}
+
+\begin{figure}[H] \centering
+\includegraphics[width=0.12\textwidth]{graphicsPoster/OCAD_Logo.png}
+\end{figure}
+%\vspace{-2em}
+
+\NORMAL{}
+\lettrine[lines=2,slope=-4pt,nindent=-4pt]{W}{e} are developing a wrist-wearable, quasi-musical device with vibrotactile arrays, which integrates with a transmedia gaming app on an accompanying smartphone. The main purpose of the wrist device is to register hand gestures and provide clues and notifications for the game player. The vibrotactile arrays also provide pleasant sensual stimulation. We propose that standard musical notation is an appropriate way to program activation patterns for these arrays in a standardized way.\\
+
+%TEXT BOX What is the Problem?
+\begin{center}
+\begin{tikzpicture}
+\node [textBox] (box){ % or figureBox
+\begin{minipage}{0.45\textwidth}
+\SECTION{}
+\textbf{What is the problem?}
+\BIG{}
+\begin{itemize}
+\item How to author interesting and functional vibrating patterns for devices with low resolution \textit{vibrotactile} arrays
+\item How to align these patterns with the configuration of the device
+\end{itemize}
+\end{minipage}};
+\end{tikzpicture}
+\end{center}
+\vspace{2em}
+
+
+\begin{figure}%[H]
+\centering
+\includegraphics[width=0.15\textwidth]{graphics/bracelet-02.png}
+%caption{Bracelet design with 2x5 tactor array.}
+\end{figure}
+%\vspace{-1em}
+\begin{center}
+\NORMAL{}
+\textbf{Vibrotactile band with a 2x5 vibe motor array.}
+\end{center}
+
+
+%TEXT BOX Why do this?
+\begin{center}
+\begin{tikzpicture}
+\node [textBox] (box){ % or figureBox
+\begin{minipage}{0.45\textwidth}
+\SECTION{}
+\textbf{Why do this?}
+\BIG{}
+\begin{itemize}
+\item Notification and stimulation from such bands could enrich transmedia narratives and gaming experiences 
+\item Touch, vibration and rhythm are important sensual modalities
+\item Authoring rhythmic patterns using music notation is efficient and has a long history
+
+
+\end{itemize}
+\end{minipage}};
+\end{tikzpicture}
 \end{center}
 %\vspace{-2em}
 
-\begin{figure}[H]
-\includegraphics[width=0.15\textwidth]{graphicsPoster/OCAD_Logo.png}
-\end{figure}
-\vspace{-2em}
-
-\SECTION{}
-\textbf{Introduction}\\
-\NORMAL{}
-Wrist-wearable vibrotactile arrays can serve many functions: typically they are used for non-disruptive notification from social media. They can also be used for direction finding, gaming and entertainment. Authoring and programming of wrist-wearable vibrotactile arrays can be difficult because of the lack of standardized notational systems and file formats. We propose that standard musical notation is an appropriate method for standardization and compositional expressiveness.
-%\vspace{-4em}
-
-\SECTION{}
-\textbf{What?}\\
-\NORMAL{}
-We are developing a MIDI-driven, wrist-wearable device that integrates with a gaming app on an accompanying smartphone. The wrist device includes LED lights, vibe motors and buttons that activate when vibe motors are touched. A wrist-wearable vibrotactile device, or what we call a \textit{vibe bracelet}, needs activation patterns to operate. It is unclear how to design such patterns in a standardized way using the technology closest at hand, which in our case is low-level code written in the C or Wiring languages. 
-
-%tikstyles (used by several figures)
-%%%%%%%%%%%%%%%%%%%%
-\tikzstyle{figureBox} = [fill=white!20, draw=black, thick,
-    rectangle, rounded corners=10pt,inner sep=1cm, inner ysep=1cm]
-\tikzstyle{textBox} = [fill=blue!20, draw=black, thick,
-    rectangle, rounded corners=10pt, inner sep=1cm, inner ysep=1cm]
-
-%\vspace{-7em}
+%TEXT BOX
 \begin{center}
-\begin{figure}[H]
-\includegraphics[width=0.45\textwidth]{graphics/bracelet-02.png}
-%caption{Bracelet design with 2x5 tactor array.}
-\end{figure}
-%\vspace{-16em}
-\SMALL{}
-\textbf{Vibrotactile band with 2x5 tactor array.}
-\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}
+\node [textBox] (box){ % or figureBox
+\begin{minipage}{0.45\textwidth}
 \SECTION{}
-\textbf{Conclusion}
-\SMALL{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Results}
+\BIG{}
+\begin{itemize}
+\item Standard music notation is typically two-dimensional: x-axis handles time, y-axis is pitch (and z-axis is unused)
+\item Physical adjacencies of musical instruments are usually not represented in their notation, therefore, authoring for 2D arrays is not straightforward. Multiplication of parts and staves seems the simplest [naive] approach 
+\item Standard music notation provides a nuanced, graphical representation for rhythmic events, which is hugely useful for our purposes.
+\end{itemize}
+\end{minipage}};
+\end{tikzpicture}
+\end{center}
+%\vspace{-2em}
 
 %Music notation is a finely structured notational system. It requires an expert-level of competence to read its finest levels of detail, however, this type of expertise is not hard to find in cultures where notated musical composition and performance is well-established. What is much less common is cross-expertise in both music notation and vibrotactile technologies. Designing interesting and functionally useful patterns for vibrotactile devices is obviously a new field. Standard musical notation includes many dimensions but in its standard forms does not easily lend itself to inclusion of additional non-musical dimensions such as required for the specification of 2 and 3D spatial patterns. These sorts of patterns are important to represent for vibrotactile devices.\\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\SECTION{}
-\textbf{Acknowledgements}
+\NORMAL{}
+\textbf{Acknowledgements}\\
 \SMALL{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-This work has been supported by the International Science and Technology Partnerships Canada Inc (ISTP) on the project Multi-platform Game Distribution System for Popular and Experimental Technologies (MGDS-PET) and by grants from the National Sciences and Engineering Research Council of Canada (NSERC). We would also like to thank Xenophile Media Inc., Vicki Clough, Shin-you Hou, Tegan Power, Ryan Maksymic, Takis Zourntos for the their help in the development of this project.\\
-
-\begin{figure}%[h]
+This work has been supported by the International Science and Technology Partnerships Canada Inc (ISTP) on the project \textit{Multi-platform Game Distribution System for Popular and Experimental Technologies} (MGDS-PET) and by grants from the National Sciences and Engineering Research Council of Canada (NSERC). We would also like to thank Xenophile Media Inc., Vicki Clough, Shin-you Hou, Tegan Power, Ryan Maksymic and Takis Zourntos for the their help in the development of this project.\\
+%\vspace{-2em}
+\begin{figure}[H] \centering
 \includegraphics[width=0.1\textwidth]{graphics/ISTP_logo.png}
-\end{figure}
-
-\begin{figure}%[h]
+\hspace{2em}
 \includegraphics[width=0.1\textwidth]{graphics/nserc_logo_color.png}
 \end{figure}
 
@@ -344,22 +384,20 @@ This work has been supported by the International Science and Technology Partner
 %\draw[very thin] (0.5,0.5) circle (0.2cm);
 %\draw[very thin] (0.5,0.5) circle (0.35cm);
 \end{tikzpicture}\\
-\textbf{Schematic of a device with a single vibe motor}
+\textbf{Device with a single vibe motor}
 
 \vspace{1cm}
 %bottom figure (musical staff)
-\begin{figure}[H]
+\begin{figure}[H] \centering
         \includegraphics[width=0.65\textwidth]{graphicsPoster/arrowsMoving-00.pdf}
 \end{figure}
-\textbf{Score for single vibe motor playing a simple solo rhythm}\\
+\textbf{Score for single vibe motor playing a simple `solo' rhythm}\\
 \end{center}
 
 \begin{itemize}
-\item Specifies activation for a single component
-\item Time = horizontal axis
-\item Horizontal, or rhythmic information as per standard musical notation
-\item Vertical position does not vary (therefore, unpitched notation would also be suitable)
+\item Time = horizontal axis; rhythmic information as per standard musical notation
 \item For most vibe motors pitch remains constant, but intensity can vary; Intensity specified by dynamics markings
+\item Vertical position does not vary (y-axis unused, therefore unpitched notation would also be suitable)
 \item Information is not very dense (single line score would suffice)
 \item \textbf{NEXT STEP} notate for multiple vibe motors
 \end{itemize}
@@ -384,23 +422,20 @@ This work has been supported by the International Science and Technology Partner
 \filldraw[fill=blue, draw=black] (3.5,0.5) circle (0.12cm);
 \filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
 \end{tikzpicture}\\
-\textbf{Schematic of a device with a line of vibe motors}.
+\textbf{Device with a line of vibe motors}.
 \vspace{2cm}
 %bottom figure (musical staff)
-\begin{figure}[H]
-        \includegraphics[width=0.85\textwidth]{graphicsPoster/arrowsMoving-00-drumStaff.pdf}
+\begin{figure}[H] \centering
+        \includegraphics[width=0.8\textwidth]{graphicsPoster/arrowsMoving-00-drumStaff.pdf}
 \end{figure}
 \textbf{Score for a linear array of five vibe motors}
 \end{center}
 
 \begin{itemize}
-\item Specifies activations for five, independent vibe motor components
-\item Time = horizontal axis
-\item Notation is for unpitched components and uses five staff lines
-\item Each part occupies one staff line (rests are hidden)
-\item Vertical staff position specifies vibe motor to activate; top line=1, second line=2, etc.
-\item MIDI number for note $\Rightarrow$ vibe motor address
-\item \textbf{PROBLEM} Putting five parts on one staff is hard to read 
+\item Specifies activations for five, independent vibe motors
+\item Each part occupies one staff line (rests are hidden); for unpitched components yet uses five staff lines
+\item Vertical staff position specifies vibe motor to activate; top line=1, second line=2, etc; MIDI note $\Rightarrow$ vibe motor
+\item \textbf{PROBLEM} Five unpitched parts on one staff are hard to read, especially if rhythms are complex
 \item \textbf{NEXT STEP} Make notation less dense and more readable
 \end{itemize}
 \rule{\textwidth}{0.5pt}\\
@@ -413,16 +448,15 @@ This work has been supported by the International Science and Technology Partner
 \vspace{1em}
 
 \SMALL{}
-\begin{figure}[H]
+\begin{figure}[H] \centering
         \includegraphics[width=0.55\textwidth, height=.35\textwidth]{graphicsPoster/arrowsMoving-01-drumStaves.pdf}
 \end{figure}
 \textbf{Score for a linear array of five vibe motors}
 \end{center}
 \begin{itemize}
 \item Specifies activations for five, independent components
-\item Time = horizontal axis
-\item Five part rhythmic notation 
-\item MIDI number derived from part number $\Rightarrow$ vibe motor address
+\item Five part single-line staff, rhythmic notation 
+\item MIDI number derived from part number; this maps to vibe motor address
 \item \textbf{NEXT STEP} Make notation suitable for two dimensional arrays of vibe motors
 \end{itemize}
 \rule{\textwidth}{0.5pt}\\
@@ -450,26 +484,26 @@ This work has been supported by the International Science and Technology Partner
 \filldraw[fill=blue, draw=black] (3.5,0.5) circle (0.12cm);
 \filldraw[fill=white, draw=black] (4.5,0.5) circle (0.12cm);
 \end{tikzpicture}\\
-\textbf{Schematic of a device with an array of vibe motors}
+\textbf{Device with an array of vibe motors}
 \vspace{2cm}
 
 %top score (musical staff)
-\begin{figure}[H]
+\begin{figure}[H] \centering
         \includegraphics[width=0.55\textwidth]{graphicsPoster/arrowsMoving-5sysx2lines.pdf}
 \end{figure}
-\textbf{Score where each staff represents one column of vibe motors}
-
+\textbf{Score where each staff represents one COLUMN of vibe motors}
+\vspace{1em}
 %bottom scale (musical staff)
-\begin{figure}[H]
-        \includegraphics[width=0.55\textwidth]{graphicsPoster/arrowsMoving-5sysx2lines.pdf}
+\begin{figure}[H] \centering
+        \includegraphics[width=0.6\textwidth]{graphicsPoster/arrowsMoving-2sysx5lines.pdf}
 \end{figure}
-\textbf{Score where each staff represents one row of vibe motors}
+\textbf{Score where each staff represents one ROW of vibe motors}
 \end{center}
 
 \begin{itemize}
 \item Time = horizontal, x-axis
-\item Ten dimensions need independent addressability 
-\item Needed: either five systems (for columns) or two systems (for rows)
+\item Ten components need independent addressability 
+\item Either five staves (for columns) or two staves (for rows)
 \end{itemize}
 \end{minipage}};
 \end{tikzpicture}
